@@ -9,3 +9,14 @@ C:\Users\Anton\source\repos\Задание 5\Задание 5\obj\Debug\netcorea
 C:\Users\Anton\source\repos\Задание 5\Задание 5\obj\Debug\netcoreapp2.2\Задание 5.AssemblyInfo.cs
 C:\Users\Anton\source\repos\Задание 5\Задание 5\obj\Debug\netcoreapp2.2\Задание 5.dll
 C:\Users\Anton\source\repos\Задание 5\Задание 5\obj\Debug\netcoreapp2.2\Задание 5.pdb
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\bin\Debug\netcoreapp2.2\Задание 5.deps.json
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\bin\Debug\netcoreapp2.2\Задание 5.runtimeconfig.json
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\bin\Debug\netcoreapp2.2\Задание 5.runtimeconfig.dev.json
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\bin\Debug\netcoreapp2.2\Задание 5.dll
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\bin\Debug\netcoreapp2.2\Задание 5.pdb
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\obj\Debug\netcoreapp2.2\Задание 5.csprojAssemblyReference.cache
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\obj\Debug\netcoreapp2.2\Задание 5.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\obj\Debug\netcoreapp2.2\Задание 5.AssemblyInfoInputs.cache
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\obj\Debug\netcoreapp2.2\Задание 5.AssemblyInfo.cs
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\obj\Debug\netcoreapp2.2\Задание 5.dll
+C:\Users\Anton\Desktop\shelter\zavd 5\Задание 5\obj\Debug\netcoreapp2.2\Задание 5.pdb

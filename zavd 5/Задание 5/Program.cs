@@ -8,9 +8,9 @@ namespace Задание_5
         {
             float a, b, c, average;
             Console.WriteLine("Введите 3 числа \n");
-            a=Convert.ToInt32(Console.ReadLine());
-            b = Convert.ToInt32(Console.ReadLine());
-            c = Convert.ToInt32(Console.ReadLine());
+            a=int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
             average = (a + b + c) / 3.0f;
             Console.WriteLine(average);
         }
