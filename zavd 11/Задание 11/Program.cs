@@ -13,21 +13,15 @@ namespace Задание_11
             b = int.Parse(Console.ReadLine());
             Console.WriteLine("Введите c");
             c = int.Parse(Console.ReadLine());
-            for(int i=0;i<3;i++)
-            {
+            
                 if (max < a)
                     max = a;
-                if(i==1)
-                {
-                    if (max < b)
-                        max = b; 
-                }
-                if(i==2)
-                {
-                    if (max < c)
-                        max = c;
-                }
-            }
+                if (max < b)
+                    max = b;
+                if (max < c)
+                    max = c;
+                
+            
             Console.Write($"Максимальное значение среди введённых вами чисел - {max}");
         }
     }
