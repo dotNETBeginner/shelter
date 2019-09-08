@@ -9,3 +9,14 @@ C:\Users\Anton\source\repos\Задание 8\Задание 8\bin\Debug\netcorea
 C:\Users\Anton\source\repos\Задание 8\Задание 8\bin\Debug\netcoreapp2.2\Задание 8.pdb
 C:\Users\Anton\source\repos\Задание 8\Задание 8\obj\Debug\netcoreapp2.2\Задание 8.dll
 C:\Users\Anton\source\repos\Задание 8\Задание 8\obj\Debug\netcoreapp2.2\Задание 8.pdb
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\bin\Debug\netcoreapp2.2\Задание 8.deps.json
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\bin\Debug\netcoreapp2.2\Задание 8.runtimeconfig.json
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\bin\Debug\netcoreapp2.2\Задание 8.runtimeconfig.dev.json
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\bin\Debug\netcoreapp2.2\Задание 8.dll
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\bin\Debug\netcoreapp2.2\Задание 8.pdb
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\obj\Debug\netcoreapp2.2\Задание 8.csprojAssemblyReference.cache
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\obj\Debug\netcoreapp2.2\Задание 8.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\obj\Debug\netcoreapp2.2\Задание 8.AssemblyInfoInputs.cache
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\obj\Debug\netcoreapp2.2\Задание 8.AssemblyInfo.cs
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\obj\Debug\netcoreapp2.2\Задание 8.dll
+C:\Users\Anton\Desktop\shelter\LAB - 1\zavd 8\Задание 8\obj\Debug\netcoreapp2.2\Задание 8.pdb

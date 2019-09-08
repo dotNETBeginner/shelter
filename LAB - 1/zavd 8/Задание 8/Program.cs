@@ -6,13 +6,16 @@ namespace Задание_8
     {
         static void Main(string[] args)
         {
-            double number, n, nDigit;
+            double number,nDigit;
+            int n;
             Console.WriteLine("Введите число");
-            number=int.Parse(Console.ReadLine());
+            number=double.Parse(Console.ReadLine());
             Console.WriteLine("Введите порядковый номер цифры числа, который хотите увидеть на экране (Нумерация идёт справа на лево)");
             n = int.Parse(Console.ReadLine());
-            nDigit =Convert.ToInt32((number/Math.Pow(10,n-1))%10);
-            Console.Write($"Результат - {nDigit}");
+            //int n1 = n - 1;
+            nDigit =((number / Math.Pow(10,n-1))%10.0d);
+           
+            Console.Write($"Результат - {Math.Truncate(nDigit)}");
 
         }
     }
