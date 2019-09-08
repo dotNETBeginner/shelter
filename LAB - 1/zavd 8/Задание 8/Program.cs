@@ -12,7 +12,7 @@ namespace Задание_8
             Console.WriteLine("Введите порядковый номер цифры числа, который хотите увидеть на экране (Нумерация идёт справа на лево)");
             n = int.Parse(Console.ReadLine());
             nDigit =Convert.ToInt32((number/Math.Pow(10,n-1))%10);
-            Console.Write($"Результат - {nDigit-1}");
+            Console.Write($"Результат - {nDigit}");
 
         }
     }
