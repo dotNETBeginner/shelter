@@ -9,3 +9,14 @@ C:\Users\Anton\source\repos\Задание 1(2лаба)\Задание 1(2лаб
 C:\Users\Anton\source\repos\Задание 1(2лаба)\Задание 1(2лаба)\obj\Debug\netcoreapp2.2\Задание 1(2лаба).AssemblyInfo.cs
 C:\Users\Anton\source\repos\Задание 1(2лаба)\Задание 1(2лаба)\obj\Debug\netcoreapp2.2\Задание 1(2лаба).dll
 C:\Users\Anton\source\repos\Задание 1(2лаба)\Задание 1(2лаба)\obj\Debug\netcoreapp2.2\Задание 1(2лаба).pdb
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\bin\Debug\netcoreapp2.2\Задание 1(2лаба).deps.json
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\bin\Debug\netcoreapp2.2\Задание 1(2лаба).runtimeconfig.json
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\bin\Debug\netcoreapp2.2\Задание 1(2лаба).runtimeconfig.dev.json
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\bin\Debug\netcoreapp2.2\Задание 1(2лаба).dll
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\bin\Debug\netcoreapp2.2\Задание 1(2лаба).pdb
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\obj\Debug\netcoreapp2.2\Задание 1(2лаба).csprojAssemblyReference.cache
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\obj\Debug\netcoreapp2.2\Задание 1(2лаба).csproj.CoreCompileInputs.cache
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\obj\Debug\netcoreapp2.2\Задание 1(2лаба).AssemblyInfoInputs.cache
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\obj\Debug\netcoreapp2.2\Задание 1(2лаба).AssemblyInfo.cs
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\obj\Debug\netcoreapp2.2\Задание 1(2лаба).dll
+C:\Users\Anton\Desktop\shelter\LAB - 2\zavd 1 - lab2\Задание 1(2лаба)\obj\Debug\netcoreapp2.2\Задание 1(2лаба).pdb
