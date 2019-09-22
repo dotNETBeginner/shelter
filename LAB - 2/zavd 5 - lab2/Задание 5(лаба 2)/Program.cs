@@ -26,22 +26,29 @@ namespace Задание_5_лаба_2_
 
             for(int i=0;i<m;i++)
             {
-                if (word1[i] < word2[i]) { c1++; }
-                else if(word2[i] < word1[i]) { c2++; }
+                if (word1[i] > word2[i])
+                {
+                    for (int j = 0; j < word2.Length; j++) { if(word2[j]!=' ')Console.Write(word2[j]);c1++; }
+                    Console.WriteLine();
+                    for (int q = 0; q < word1.Length; q++) { if (word1[q] != ' ') Console.Write(word1[q]); c2++; }
+                    break;
+                }
+                else if(word1[i] < word2[i])
+                {
+                    for (int j = 0; j < word1.Length; j++) { if (word1[j] != ' ') Console.Write(word1[j]); }
+                    Console.WriteLine();
+                    for (int q = 0; q < word2.Length; q++) { if (word2[q] != ' ') Console.Write(word2[q]); }
+                    break;
+                }
+                else if(word1[i] == word2[i]) {continue; }
             }
-            Console.WriteLine();
-            if((c1>c2&&word1.Length==word2.Length)||(c1 == c2 && word1.Length == word2.Length)||((c1 == c2 && word1.Length < word2.Length)))
+            if(c1==0&&c2==0)
             {
-                for(int i = 0; i < word1.Length; i++) { if(word1[i]!=' ')Console.Write(word1[i]); }
+                for (int j = 0; j < word1.Length; j++) { if (word2[j] != ' ') Console.Write(word1[j]); }
                 Console.WriteLine();
-                for (int i = 0; i < word2.Length; i++) { if (word2[i] != ' ') Console.Write(word2[i]); }
+                for (int q = 0; q < word2.Length; q++) { if (word2[q] != ' ') Console.Write(word2[q]); }
             }
-            else if((c2>c1 && word1.Length == word2.Length)|| (c1 == c2 && word1.Length > word2.Length))
-            {
-                for (int i = 0; i < word2.Length; i++) { if (word2[i] != ' ') Console.Write(word2[i]); }
-                Console.WriteLine();
-                for (int i = 0; i < word1.Length; i++) { if (word1[i] != ' ') Console.Write(word1[i]); }
-            }
+         
         }
     }
 }
