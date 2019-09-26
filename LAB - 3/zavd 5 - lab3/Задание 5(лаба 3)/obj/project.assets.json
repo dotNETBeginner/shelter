@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anton\\source\\repos\\Задание 5(лаба 3)\\Задание 5(лаба 3)\\Задание 5(лаба 3).csproj",
+      "projectUniqueName": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 3\\zavd 5 - lab3\\Задание 5(лаба 3)\\Задание 5(лаба 3).csproj",
       "projectName": "Задание 5(лаба 3)",
-      "projectPath": "C:\\Users\\Anton\\source\\repos\\Задание 5(лаба 3)\\Задание 5(лаба 3)\\Задание 5(лаба 3).csproj",
+      "projectPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 3\\zavd 5 - lab3\\Задание 5(лаба 3)\\Задание 5(лаба 3).csproj",
       "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anton\\source\\repos\\Задание 5(лаба 3)\\Задание 5(лаба 3)\\obj\\",
+      "outputPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 3\\zavd 5 - lab3\\Задание 5(лаба 3)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
