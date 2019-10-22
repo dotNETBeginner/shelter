@@ -15,17 +15,14 @@ namespace Задание_2_лаба_6_
             get { return author; }
             set
             {
-                string someProp;
+                string[] someValue = value.Split(" ");
+                string someWord = someValue[1];
                 bool isDigit=false;
 
-                for (int i=0;i<value.Length;i++)
+                for (int i=0;i<someWord.Length;i++)
                 {
-                    if(value[i] == ' ')
-                    {
-                        someProp = Convert.ToString(value[i+1]);
-                        isDigit = int.TryParse(someProp,out int n);
-                        break;
-                    }
+                    isDigit = char.IsDigit(someWord[i]);
+                    if (isDigit) { break; }
                 }
 
                 if(isDigit)

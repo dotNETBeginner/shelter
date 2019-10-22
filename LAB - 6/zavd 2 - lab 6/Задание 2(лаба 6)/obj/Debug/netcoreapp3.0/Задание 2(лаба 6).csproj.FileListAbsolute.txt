@@ -9,3 +9,14 @@ C:\Users\Anton\source\repos\Задание 2(лаба 6)\Задание 2(лаб
 C:\Users\Anton\source\repos\Задание 2(лаба 6)\Задание 2(лаба 6)\obj\Debug\netcoreapp3.0\Задание 2(лаба 6).AssemblyInfo.cs
 C:\Users\Anton\source\repos\Задание 2(лаба 6)\Задание 2(лаба 6)\obj\Debug\netcoreapp3.0\Задание 2(лаба 6).dll
 C:\Users\Anton\source\repos\Задание 2(лаба 6)\Задание 2(лаба 6)\obj\Debug\netcoreapp3.0\Задание 2(лаба 6).pdb
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\bin\Debug\netcoreapp3.0\Задание 2(лаба 6).exe
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\bin\Debug\netcoreapp3.0\Задание 2(лаба 6).deps.json
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\bin\Debug\netcoreapp3.0\Задание 2(лаба 6).runtimeconfig.json
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\bin\Debug\netcoreapp3.0\Задание 2(лаба 6).runtimeconfig.dev.json
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\bin\Debug\netcoreapp3.0\Задание 2(лаба 6).dll
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\bin\Debug\netcoreapp3.0\Задание 2(лаба 6).pdb
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\obj\Debug\netcoreapp3.0\Задание 2(лаба 6).csprojAssemblyReference.cache
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\obj\Debug\netcoreapp3.0\Задание 2(лаба 6).AssemblyInfoInputs.cache
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\obj\Debug\netcoreapp3.0\Задание 2(лаба 6).AssemblyInfo.cs
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\obj\Debug\netcoreapp3.0\Задание 2(лаба 6).dll
+C:\Users\Anton\Desktop\shelter\LAB - 6\zavd 2 - lab 6\Задание 2(лаба 6)\obj\Debug\netcoreapp3.0\Задание 2(лаба 6).pdb
