@@ -8,20 +8,20 @@ namespace задание_3_лаба_9
         {
             int n = int.Parse(Console.ReadLine());
 
-            string s;
-            string[] bS = new string[n];
+            int s;
+            int[] bS = new int[n];
 
             for (int i = 0; i < n; i++)
             {
-                s = Console.ReadLine();
+                s = int.Parse(Console.ReadLine());
                 bS[i] = s;
             }
 
-            Box<string> someBox = new Box<string>(n, bS);
+            Box<int> someBox = new Box<int>(n, bS);
 
-            bS = Console.ReadLine().Split(" ");
+            string[] command = Console.ReadLine().Split(" ");
 
-            Swap<string>(someBox, int.Parse(bS[0]), int.Parse(bS[1]));
+            Swap<int>(someBox, int.Parse(command[0]), int.Parse(command[1]));
         }
 
         public static void Swap<T>(Box<T> Props, int i, int j)

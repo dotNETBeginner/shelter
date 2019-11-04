@@ -18,7 +18,7 @@ namespace задание_3_лаба_9
 
         public void Display()
         {
-            for (int i = 0; i < SomeProps.Length; i++)
+            for(int i=0;i<SomeProps.Length;i++)
             { Console.WriteLine($"{SomeProps[i].GetType().FullName}  -  {SomeProps[i]}"); }
         }
     }
