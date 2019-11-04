@@ -1,0 +1,11 @@
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\bin\Debug\netcoreapp2.0\1 задание 9 лаба.deps.json
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\bin\Debug\netcoreapp2.0\1 задание 9 лаба.runtimeconfig.json
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\bin\Debug\netcoreapp2.0\1 задание 9 лаба.runtimeconfig.dev.json
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\bin\Debug\netcoreapp2.0\1 задание 9 лаба.dll
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\bin\Debug\netcoreapp2.0\1 задание 9 лаба.pdb
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\obj\Debug\netcoreapp2.0\1 задание 9 лаба.csprojResolveAssemblyReference.cache
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\obj\Debug\netcoreapp2.0\1 задание 9 лаба.csproj.CoreCompileInputs.cache
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\obj\Debug\netcoreapp2.0\1 задание 9 лаба.AssemblyInfoInputs.cache
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\obj\Debug\netcoreapp2.0\1 задание 9 лаба.AssemblyInfo.cs
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\obj\Debug\netcoreapp2.0\1 задание 9 лаба.dll
+c:\users\user\source\repos\1 задание 9 лаба\1 задание 9 лаба\obj\Debug\netcoreapp2.0\1 задание 9 лаба.pdb
