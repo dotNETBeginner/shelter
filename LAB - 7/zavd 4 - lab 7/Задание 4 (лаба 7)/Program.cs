@@ -11,7 +11,7 @@ namespace Задание_4__лаба_7_
             string[] sUrl = Console.ReadLine().Split(" ");
 
             Smartphone someSmartphone = new Smartphone();
-            someSmartphone.Notify += (sender, sea) => Console.WriteLine(sea.Message);
+            someSmartphone.Notify += (sea) => Console.WriteLine(sea.Message);
             
             for(int i=0;i<sPhoneNumbers.Length;i++)
             { someSmartphone.Call(sPhoneNumbers[i]); }

@@ -6,7 +6,6 @@ namespace Задание_5__лаба_7_
     {
         static void Main(string[] args)
         {
-            IBuyer foodValue;
 
             Console.WriteLine("Input digit of persons");
             int n = Convert.ToInt32(Console.ReadLine());

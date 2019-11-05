@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anton\\source\\repos\\Задание 4 (лаба 7)\\Задание 4 (лаба 7)\\Задание 4 (лаба 7).csproj": {}
+    "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 7\\zavd 4 - lab 7\\Задание 4 (лаба 7)\\Задание 4 (лаба 7).csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anton\\source\\repos\\Задание 4 (лаба 7)\\Задание 4 (лаба 7)\\Задание 4 (лаба 7).csproj": {
+    "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 7\\zavd 4 - lab 7\\Задание 4 (лаба 7)\\Задание 4 (лаба 7).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anton\\source\\repos\\Задание 4 (лаба 7)\\Задание 4 (лаба 7)\\Задание 4 (лаба 7).csproj",
+        "projectUniqueName": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 7\\zavd 4 - lab 7\\Задание 4 (лаба 7)\\Задание 4 (лаба 7).csproj",
         "projectName": "Задание 4 (лаба 7)",
-        "projectPath": "C:\\Users\\Anton\\source\\repos\\Задание 4 (лаба 7)\\Задание 4 (лаба 7)\\Задание 4 (лаба 7).csproj",
+        "projectPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 7\\zavd 4 - lab 7\\Задание 4 (лаба 7)\\Задание 4 (лаба 7).csproj",
         "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anton\\source\\repos\\Задание 4 (лаба 7)\\Задание 4 (лаба 7)\\obj\\",
+        "outputPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 7\\zavd 4 - lab 7\\Задание 4 (лаба 7)\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

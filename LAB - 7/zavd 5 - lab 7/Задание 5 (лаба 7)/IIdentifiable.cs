@@ -7,5 +7,7 @@ namespace Задание_5__лаба_7_
     interface IIdentifiable
     {
         string Id { get; set; }
+
+        public void FindFakeId(string s);
     }
 }

@@ -8,5 +8,7 @@ namespace Задание_5__лаба_7_
     {
         public string Name { get; set; }
         public string BirthDate { get; set; }
+
+        public void FindYearInDate(string year);
     }
 }
