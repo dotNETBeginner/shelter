@@ -22,7 +22,7 @@ namespace Задание_6_лаба_6_
                 {
                     bool checkIfnumber = int.TryParse(Convert.ToString(value[i]), out int result);
                      if (checkIfnumber)
-                    { throw new InvalidInputException("Invalid input!"); }
+                    { throw new InvalidInputException("Invalid input!1"); }
                     else { name = value; }
                 }
             }
@@ -33,7 +33,7 @@ namespace Задание_6_лаба_6_
             set
             {
                 if (value < 0)
-                { throw new InvalidInputException("Invalid input!"); }
+                { throw new InvalidInputException("Invalid input!2"); }
                 else { age = value; }
             }
         }
@@ -42,15 +42,16 @@ namespace Задание_6_лаба_6_
             get { return gender; }
             set
             {
-                if (value != "Male" && value != "Female" && value != "male" && value != "female")
+                if (value != "Male" && value != "Female" && value != "male" && value != "female" || (TypeOfAnimal == "FuturePet" && (value != "CatDog" && value != "DogCat")))
                 {
                     if (value == "")
                     { throw new EmptyFieldException("Gender field can`t be empty"); }
 
-                    if (TypeOfAnimal != "Kitten" && TypeOfAnimal != "Tomcat")
-                    { throw new InvalidInputException("Invalid input!"); }
+                    if (TypeOfAnimal != "Kitten" && TypeOfAnimal != "Tomcat" && TypeOfAnimal != "FuturePet")
+                    { throw new InvalidInputException("Invalid input!3"); }
                     else { gender = value; }
                 }
+                else { gender = value; }
             }
         }
 
@@ -99,10 +100,25 @@ namespace Задание_6_лаба_6_
                 someTomcat.Display();
                 someTomcat.ProduceSound();
             }
+
+            if (TypeOfAnimal == "FuturePet")
+            {
+                FuturePet someFuturePet = new FuturePet(TypeOfAnimal, Name, Age, Gender);
+                someFuturePet.Display();
+                someFuturePet.ProduceSound();
+            }
         }
 
         public virtual void ProduceSound()
-        { Console.WriteLine(" "); }
+        {
+            if (Gender == "CatDog")
+            { Console.WriteLine("MEOW WOOf"); }
+
+            else if (Gender == "DogCat")
+            { Console.WriteLine("WOOf MEOW"); }
+
+            else { Console.WriteLine("BOOM"); Console.WriteLine(Gender); }
+        }
 
         public virtual void Display()
         { Console.WriteLine($"{TypeOfAnimal}\n{Name} {Age} {Gender}");  }
@@ -177,6 +193,18 @@ namespace Задание_6_лаба_6_
 
             public override void Display()
             { base.Display(); }
+        }
+
+        class FuturePet : Animal
+        {
+            public FuturePet(string type, string name, int age, string gender)
+                : base(type, name, age, gender)
+            { }
+
+            public override void ProduceSound()
+            {
+                base.ProduceSound();
+            }
         }
     }
 }

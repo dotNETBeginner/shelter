@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anton\\source\\repos\\Задание 6(лаба 6)\\Задание 6(лаба 6)\\Задание 6(лаба 6).csproj",
+      "projectUniqueName": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 6\\zavd 6 - lab 6\\Задание 6(лаба 6)\\Задание 6(лаба 6).csproj",
       "projectName": "Задание 6(лаба 6)",
-      "projectPath": "C:\\Users\\Anton\\source\\repos\\Задание 6(лаба 6)\\Задание 6(лаба 6)\\Задание 6(лаба 6).csproj",
+      "projectPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 6\\zavd 6 - lab 6\\Задание 6(лаба 6)\\Задание 6(лаба 6).csproj",
       "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anton\\source\\repos\\Задание 6(лаба 6)\\Задание 6(лаба 6)\\obj\\",
+      "outputPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 6\\zavd 6 - lab 6\\Задание 6(лаба 6)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
