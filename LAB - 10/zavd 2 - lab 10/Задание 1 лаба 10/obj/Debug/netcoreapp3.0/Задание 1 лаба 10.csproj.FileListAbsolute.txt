@@ -20,3 +20,14 @@ C:\Users\Anton\source\repos\Задание 2 лаба 10\Задание 1 лаб
 C:\Users\Anton\source\repos\Задание 2 лаба 10\Задание 1 лаба 10\obj\Debug\netcoreapp3.0\Задание 1 лаба 10.AssemblyInfo.cs
 C:\Users\Anton\source\repos\Задание 2 лаба 10\Задание 1 лаба 10\obj\Debug\netcoreapp3.0\Задание 1 лаба 10.dll
 C:\Users\Anton\source\repos\Задание 2 лаба 10\Задание 1 лаба 10\obj\Debug\netcoreapp3.0\Задание 1 лаба 10.pdb
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\bin\Debug\netcoreapp3.0\Задание 1 лаба 10.exe
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\bin\Debug\netcoreapp3.0\Задание 1 лаба 10.deps.json
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\bin\Debug\netcoreapp3.0\Задание 1 лаба 10.runtimeconfig.json
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\bin\Debug\netcoreapp3.0\Задание 1 лаба 10.runtimeconfig.dev.json
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\bin\Debug\netcoreapp3.0\Задание 1 лаба 10.dll
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\bin\Debug\netcoreapp3.0\Задание 1 лаба 10.pdb
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\obj\Debug\netcoreapp3.0\Задание 1 лаба 10.csprojAssemblyReference.cache
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\obj\Debug\netcoreapp3.0\Задание 1 лаба 10.AssemblyInfoInputs.cache
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\obj\Debug\netcoreapp3.0\Задание 1 лаба 10.AssemblyInfo.cs
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\obj\Debug\netcoreapp3.0\Задание 1 лаба 10.dll
+C:\Users\Anton\Desktop\shelter\LAB - 10\zavd 2 - lab 10\Задание 1 лаба 10\obj\Debug\netcoreapp3.0\Задание 1 лаба 10.pdb

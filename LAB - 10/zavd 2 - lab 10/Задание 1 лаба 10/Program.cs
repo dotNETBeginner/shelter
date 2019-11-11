@@ -26,10 +26,8 @@ namespace Задание_1_лаба_10
                     { someBody.Print(); }
                     else if (command[0] == "PrintAll")
                     {
-                        IEnumerator ie = someBody.PrintAll();
-                        while(ie.MoveNext())
+                       foreach(string item in someBody.someProps)
                         {
-                            string item = (string)ie.Current;
                             Console.Write(item + " ");
                         }
                     }

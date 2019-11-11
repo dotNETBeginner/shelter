@@ -41,7 +41,7 @@ namespace Задание_1_лаба_10
             currIndex = 0;
         }
 
-        public IEnumerator<T> PrintAll()
+        public IEnumerable<T> PrintAll()
         {
             foreach(T i in someProps)
             {
