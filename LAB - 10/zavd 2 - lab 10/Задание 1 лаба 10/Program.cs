@@ -26,7 +26,7 @@ namespace Задание_1_лаба_10
                     { someBody.Print(); }
                     else if (command[0] == "PrintAll")
                     {
-                       foreach(string item in someBody.someProps)
+                       foreach(string item in someBody.PrintAll())
                         {
                             Console.Write(item + " ");
                         }
