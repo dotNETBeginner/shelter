@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anton\\source\\repos\\1 задание 15 лаба\\1 задание 15 лаба\\1 задание 15 лаба.csproj": {}
+    "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 15\\zavd 1 - lab 15\\1 задание 15 лаба\\1 задание 15 лаба.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anton\\source\\repos\\1 задание 15 лаба\\1 задание 15 лаба\\1 задание 15 лаба.csproj": {
+    "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 15\\zavd 1 - lab 15\\1 задание 15 лаба\\1 задание 15 лаба.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anton\\source\\repos\\1 задание 15 лаба\\1 задание 15 лаба\\1 задание 15 лаба.csproj",
+        "projectUniqueName": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 15\\zavd 1 - lab 15\\1 задание 15 лаба\\1 задание 15 лаба.csproj",
         "projectName": "1 задание 15 лаба",
-        "projectPath": "C:\\Users\\Anton\\source\\repos\\1 задание 15 лаба\\1 задание 15 лаба\\1 задание 15 лаба.csproj",
+        "projectPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 15\\zavd 1 - lab 15\\1 задание 15 лаба\\1 задание 15 лаба.csproj",
         "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anton\\source\\repos\\1 задание 15 лаба\\1 задание 15 лаба\\obj\\",
+        "outputPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 15\\zavd 1 - lab 15\\1 задание 15 лаба\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
