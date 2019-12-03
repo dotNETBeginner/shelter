@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anton\\source\\repos\\Задание 3(лаба 3)\\Задание 3(лаба 3)\\Задание 3(лаба 3).csproj",
+      "projectUniqueName": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 3\\zavd 3 - lab3\\Задание 3(лаба 3)\\Задание 3(лаба 3).csproj",
       "projectName": "Задание 3(лаба 3)",
-      "projectPath": "C:\\Users\\Anton\\source\\repos\\Задание 3(лаба 3)\\Задание 3(лаба 3)\\Задание 3(лаба 3).csproj",
+      "projectPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 3\\zavd 3 - lab3\\Задание 3(лаба 3)\\Задание 3(лаба 3).csproj",
       "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anton\\source\\repos\\Задание 3(лаба 3)\\Задание 3(лаба 3)\\obj\\",
+      "outputPath": "C:\\Users\\Anton\\Desktop\\shelter\\LAB - 3\\zavd 3 - lab3\\Задание 3(лаба 3)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -734,10 +734,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
