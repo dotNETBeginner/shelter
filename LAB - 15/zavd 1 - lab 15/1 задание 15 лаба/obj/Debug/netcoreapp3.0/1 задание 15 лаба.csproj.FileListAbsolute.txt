@@ -9,3 +9,14 @@ C:\Users\Anton\source\repos\1 задание 15 лаба\1 задание 15 л�
 C:\Users\Anton\source\repos\1 задание 15 лаба\1 задание 15 лаба\obj\Debug\netcoreapp3.0\1 задание 15 лаба.AssemblyInfo.cs
 C:\Users\Anton\source\repos\1 задание 15 лаба\1 задание 15 лаба\obj\Debug\netcoreapp3.0\1 задание 15 лаба.dll
 C:\Users\Anton\source\repos\1 задание 15 лаба\1 задание 15 лаба\obj\Debug\netcoreapp3.0\1 задание 15 лаба.pdb
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\bin\Debug\netcoreapp3.0\1 задание 15 лаба.exe
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\bin\Debug\netcoreapp3.0\1 задание 15 лаба.deps.json
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\bin\Debug\netcoreapp3.0\1 задание 15 лаба.runtimeconfig.json
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\bin\Debug\netcoreapp3.0\1 задание 15 лаба.runtimeconfig.dev.json
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\bin\Debug\netcoreapp3.0\1 задание 15 лаба.dll
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\bin\Debug\netcoreapp3.0\1 задание 15 лаба.pdb
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\obj\Debug\netcoreapp3.0\1 задание 15 лаба.csprojAssemblyReference.cache
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\obj\Debug\netcoreapp3.0\1 задание 15 лаба.AssemblyInfoInputs.cache
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\obj\Debug\netcoreapp3.0\1 задание 15 лаба.AssemblyInfo.cs
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\obj\Debug\netcoreapp3.0\1 задание 15 лаба.dll
+C:\Users\Anton\Desktop\shelter\LAB - 15\zavd 1 - lab 15\1 задание 15 лаба\obj\Debug\netcoreapp3.0\1 задание 15 лаба.pdb
