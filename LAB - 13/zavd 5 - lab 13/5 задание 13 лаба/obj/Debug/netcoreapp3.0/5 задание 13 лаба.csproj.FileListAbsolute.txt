@@ -1,0 +1,11 @@
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\bin\Debug\netcoreapp3.0\5 задание 13 лаба.exe
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\bin\Debug\netcoreapp3.0\5 задание 13 лаба.deps.json
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\bin\Debug\netcoreapp3.0\5 задание 13 лаба.runtimeconfig.json
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\bin\Debug\netcoreapp3.0\5 задание 13 лаба.runtimeconfig.dev.json
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\bin\Debug\netcoreapp3.0\5 задание 13 лаба.dll
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\bin\Debug\netcoreapp3.0\5 задание 13 лаба.pdb
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\obj\Debug\netcoreapp3.0\5 задание 13 лаба.csprojAssemblyReference.cache
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\obj\Debug\netcoreapp3.0\5 задание 13 лаба.AssemblyInfoInputs.cache
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\obj\Debug\netcoreapp3.0\5 задание 13 лаба.AssemblyInfo.cs
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\obj\Debug\netcoreapp3.0\5 задание 13 лаба.dll
+C:\Users\Anton\source\repos\5 задание 13 лаба\5 задание 13 лаба\obj\Debug\netcoreapp3.0\5 задание 13 лаба.pdb
