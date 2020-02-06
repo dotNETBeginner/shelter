@@ -18,6 +18,8 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+
+
         private void btnConnect_Click(object sender, EventArgs e)
         {
             bool Connected = false;
@@ -29,7 +31,7 @@ namespace WindowsFormsApp1
                 UserReq.ConnectTo(tbDatSource.Text, tblnitCat.Text); //Метод підключення до БД, приймає значення назви сервера, та назви БД
                 Connected = true;
             }
-            catch (SqlException e1)
+            catch (Exception e1)
             {
                 MessageBox.Show(this, e1.Message, "Connection Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -38,7 +40,9 @@ namespace WindowsFormsApp1
 
             if (Connected)
             {
+                MessageBox.Show("Вы смогли подключиться!");
                 //Відкриваєм доступ до управління виконуванням запитів:
+                btnRequest.Enabled = true;
                 tbRequest.Enabled = true;
                 btnConnect.Enabled = true;
                 datGridSQLResult.Enabled = true;
@@ -47,8 +51,8 @@ namespace WindowsFormsApp1
             else
             {
                 //Закриваємо доступ до управління виконуванням запитів:
+                btnRequest.Enabled = false;
                 tbRequest.Enabled = false;
-                btnConnect.Enabled = false;
                 datGridSQLResult.Enabled = false;
                 DatGridDBTables.Enabled = false;
             }
@@ -93,6 +97,45 @@ namespace WindowsFormsApp1
         private void DatGridDBTables_Resize(object sender, EventArgs e)
         {
           //??
+        }
+
+        private void MainForm_Load_1(object sender, EventArgs e)
+        {
+            //Створюємо класс взаємодії з БД
+            UserReq = new DBRequest();
+            //Створюємо таблицю і добавляєм в неї стовбці:
+            StructTab = new System.Data.DataTable(); //Таблиця StructTab установлюється в якості джерела даних для візуальної компоненти DatGridDBTables, яка буде відображати дані цієї таблиці в формі строки 242 243
+            System.Data.DataColumn NewDatCol = new System.Data.DataColumn("Tables", System.Type.GetType("System.String"));
+            NewDatCol.AllowDBNull = false;
+            NewDatCol.Unique = true;
+            StructTab.Columns.Add(NewDatCol);
+            NewDatCol = new System.Data.DataColumn("Fields", System.Type.GetType("System.String"));
+            NewDatCol.AllowDBNull = false;
+            NewDatCol.DefaultValue = "none;";
+            StructTab.Columns.Add(NewDatCol);
+            DatGridDBTables.DataSource = StructTab;
+            DatGridDBTables.ReadOnly = false;
+            datGridSQLResult.DataSource = RequestTab; //(Спочатку див. строку 233) В якості джерела тут також виступає StructTab
+            //Підключаєм до таблиці оброблювач події зміни строки:
+            StructTab.RowChanged += new System.Data.DataRowChangeEventHandler(StructTab_OnRowChanged); //Підключення обробника подій зміни строки StructTab.RowChanged
+        }
+
+        private void StructTab_OnRowChanged(object sender, System.Data.DataRowChangeEventArgs e)
+        {
+            try
+            {
+                if (LastTabName != (string)e.Row["Tables"])
+                {
+                    LastTabName = (string)e.Row["Tables"];
+                    string Fields = UserReq.GetTableFields(LastTabName);
+                    e.Row["Fields"] = Fields;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "Connection Error", MessageBoxButtons.OK,
+                  MessageBoxIcon.Error);
+            }
         }
     }
 }

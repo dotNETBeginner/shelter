@@ -52,7 +52,8 @@ namespace WindowsFormsApp1
 
                 string ResStr = "";
                 int ColCount = CurTable.Columns.Count;
-                
+
+
                 for(int i = 0; i < ColCount; i++) //В цьому циклі виробляєтсья формування строки ResStr зі списком полів завантаженої нами таблиці
                 {                                  //Доступ до полів виробляється через поле Columns класа DataTable
                     string StrCon = ", ";

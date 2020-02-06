@@ -34,8 +34,6 @@ namespace WindowsFormsApp1
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnRequest = new System.Windows.Forms.Button();
             this.DatGridDBTables = new System.Windows.Forms.DataGridView();
-            this.ColTables = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFields = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datGridSQLResult = new System.Windows.Forms.DataGridView();
             this.tbDatSource = new System.Windows.Forms.TextBox();
             this.tblnitCat = new System.Windows.Forms.TextBox();
@@ -43,6 +41,8 @@ namespace WindowsFormsApp1
             this.labSQLReq = new System.Windows.Forms.Label();
             this.lablnitCat = new System.Windows.Forms.Label();
             this.labDatSource = new System.Windows.Forms.Label();
+            this.ColTables = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFields = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DatGridDBTables)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datGridSQLResult)).BeginInit();
             this.SuspendLayout();
@@ -72,8 +72,7 @@ namespace WindowsFormsApp1
             // 
             // DatGridDBTables
             // 
-            this.DatGridDBTables.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DatGridDBTables.AccessibleName = "";
             this.DatGridDBTables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatGridDBTables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColTables,
@@ -84,23 +83,8 @@ namespace WindowsFormsApp1
             this.DatGridDBTables.ReadOnly = true;
             this.DatGridDBTables.Size = new System.Drawing.Size(520, 121);
             this.DatGridDBTables.TabIndex = 2;
-            this.DatGridDBTables.Click += new System.EventHandler(this.MainForm_Load);
+            this.DatGridDBTables.Tag = "TabFields";
             this.DatGridDBTables.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DatGridDBTables_MouseUp);
-            this.DatGridDBTables.Resize += new System.EventHandler(this.DatGridDBTables_Resize);
-            // 
-            // ColTables
-            // 
-            this.ColTables.HeaderText = "Table Name";
-            this.ColTables.Name = "ColTables";
-            this.ColTables.ReadOnly = true;
-            this.ColTables.Width = 80;
-            // 
-            // ColFields
-            // 
-            this.ColFields.HeaderText = "Field Names in Table";
-            this.ColFields.Name = "ColFields";
-            this.ColFields.ReadOnly = true;
-            this.ColFields.Width = 280;
             // 
             // datGridSQLResult
             // 
@@ -113,7 +97,7 @@ namespace WindowsFormsApp1
             this.datGridSQLResult.ReadOnly = true;
             this.datGridSQLResult.Size = new System.Drawing.Size(520, 157);
             this.datGridSQLResult.TabIndex = 3;
-            this.datGridSQLResult.Click += new System.EventHandler(this.MainForm_Load);
+            this.datGridSQLResult.Click += new System.EventHandler(this.MainForm_Load_1);
             this.datGridSQLResult.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DatGridDBTables_MouseUp);
             // 
             // tbDatSource
@@ -126,7 +110,7 @@ namespace WindowsFormsApp1
             this.tbDatSource.Name = "tbDatSource";
             this.tbDatSource.Size = new System.Drawing.Size(444, 20);
             this.tbDatSource.TabIndex = 4;
-            this.tbDatSource.Text = "localhost\\VSdotNET";
+            this.tbDatSource.Text = ".\\SQLEXPRESS";
             // 
             // tblnitCat
             // 
@@ -178,6 +162,23 @@ namespace WindowsFormsApp1
             this.labDatSource.TabIndex = 9;
             this.labDatSource.Text = "Data Source:";
             // 
+            // ColTables
+            // 
+            this.ColTables.DataPropertyName = "Tables";
+            this.ColTables.HeaderText = "Table Name";
+            this.ColTables.Name = "ColTables";
+            this.ColTables.ReadOnly = true;
+            this.ColTables.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColTables.Width = 80;
+            // 
+            // ColFields
+            // 
+            this.ColFields.DataPropertyName = "Fields";
+            this.ColFields.HeaderText = "Field Names in Table";
+            this.ColFields.Name = "ColFields";
+            this.ColFields.ReadOnly = true;
+            this.ColFields.Width = 400;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +198,7 @@ namespace WindowsFormsApp1
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Data Base Request";
+            this.Load += new System.EventHandler(this.MainForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.DatGridDBTables)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datGridSQLResult)).EndInit();
             this.ResumeLayout(false);
@@ -216,8 +218,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label labSQLReq;
         private System.Windows.Forms.Label lablnitCat;
         private System.Windows.Forms.Label labDatSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTables;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFields;
 
         //Клас виконуючий зв'якзок з БД і запит до неї
         public DBRequest UserReq;
@@ -233,42 +233,12 @@ namespace WindowsFormsApp1
 
         private void MainForm_Load(object sender, System.EventArgs e)
         {
-            //Створюємо класс взаємодії з БД
-            UserReq = new DBRequest();
-            //Створюємо таблицю і добавляєм в неї стовбці:
-            StructTab = new System.Data.DataTable("TabFiels"); //Таблиця StructTab установлюється в якості джерела даних для візуальної компоненти DatGridDBTables, яка буде відображати дані цієї таблиці в формі строки 242 243
-            System.Data.DataColumn NewDatCol = new System.Data.DataColumn("Tables", System.Type.GetType("System.String"));
-            NewDatCol.AllowDBNull = false;
-            NewDatCol.Unique = true;
-            StructTab.Columns.Add(NewDatCol);
-            NewDatCol = new System.Data.DataColumn("Fields", System.Type.GetType("System.String"));
-            NewDatCol.AllowDBNull = false;
-            NewDatCol.DefaultValue = "none;";
-            StructTab.Columns.Add(NewDatCol);
-            DatGridDBTables.DataSource = StructTab;
-            DatGridDBTables.ReadOnly = false;
-            datGridSQLResult.DataSource = RequestTab; //(Спочатку див. строку 233) В якості джерела тут також виступає StructTab
-            //Підключаєм до таблиці оброблювач події зміни строки:
-            StructTab.RowChanged += new System.Data.DataRowChangeEventHandler(StructTab_OnRowChanged); //Підключення обробника подій зміни строки StructTab.RowChanged
+
+            
         }
 
-        private void StructTab_OnRowChanged(object sender, System.Data.DataRowChangeEventArgs e)
-        {
-            try
-            {
-                if(LastTabName != (string) e.Row["Tables"])
-                {
-                    LastTabName = (string)e.Row["Tables"];
-                    string Fields = UserReq.GetTableFields(LastTabName);
-                    e.Row["Fields"] = Fields;
-                }
-            }
-            catch(SqlException ex)
-            {
-                MessageBox.Show(this, ex.Message, "Connection Error", MessageBoxButtons.OK,
-                  MessageBoxIcon.Error);
-            }
-        }
+        private DataGridViewTextBoxColumn ColTables;
+        private DataGridViewTextBoxColumn ColFields;
     }
 }
 
