@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -47,7 +48,7 @@ namespace WindowsFormsApp1
                     DBAdapt = new SqlDataAdapter("SELECT * FROM " + TableName, DbCon); //В конструктор передається запит який виконує вибірку
                     DBAdapt.Fill(CurTable);  //всіх рядків з таблиці TableName, та посилання на об'єкт підключення з БД 
                 }                            //Метод Fill заповнює створений нами об'єкт CurTable даними таблиці БД, завантаженими з сервера
-                catch(SqlException ex)
+                catch(Exception ex)
                 { throw ex; }
 
                 string ResStr = "";
@@ -80,9 +81,13 @@ namespace WindowsFormsApp1
                 try
                 {
                     DBAdapt = new SqlDataAdapter(RequestStr, DbCon); //Додавання в адаптер строки з запитом, та строки підключення до БД
-                    DBAdapt.Fill(ResultTab); //Виконання запиту до таблиці
+
+                    try { DBAdapt.Fill(ResultTab); } //Виконання запиту до таблиці
+                    catch(Exception e)
+                    { MessageBox.Show(e.Message,"Query row is empty",MessageBoxButtons.OK,MessageBoxIcon.Error); }
+
                 }
-                catch(SqlException ex)
+                catch(Exception ex)
                 { throw ex; }
 
                 return ResultTab; //Вивід результату

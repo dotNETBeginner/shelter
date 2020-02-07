@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -230,12 +230,6 @@ namespace WindowsFormsApp1
 
         //Назва таблиці, опрацьованої останній раз в StructTab_OnRowChanged
         private string LastTabName;
-
-        private void MainForm_Load(object sender, System.EventArgs e)
-        {
-
-            
-        }
 
         private DataGridViewTextBoxColumn ColTables;
         private DataGridViewTextBoxColumn ColFields;

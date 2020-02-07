@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
 
 namespace WindowsFormsApp1
 {
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception e1)
             {
-                MessageBox.Show(this, e1.Message, "Connection Error", MessageBoxButtons.OK,
+                MessageBox.Show(this, e1.Message, "Connection Error", MessageBoxButtons.OK,    //1
                     MessageBoxIcon.Error);
                 Connected = false;
             }
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
                 RequestTab = UserReq.SQLRequest(tbRequest.Text); //Присвоєння RequstTab значення вводимого запиту
                 datGridSQLResult.DataSource = RequestTab;
             }
-            catch(SqlException ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(this, ex.Message, "Request Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -104,12 +104,12 @@ namespace WindowsFormsApp1
             //Створюємо класс взаємодії з БД
             UserReq = new DBRequest();
             //Створюємо таблицю і добавляєм в неї стовбці:
-            StructTab = new System.Data.DataTable(); //Таблиця StructTab установлюється в якості джерела даних для візуальної компоненти DatGridDBTables, яка буде відображати дані цієї таблиці в формі строки 242 243
-            System.Data.DataColumn NewDatCol = new System.Data.DataColumn("Tables", System.Type.GetType("System.String"));
+            StructTab = new DataTable(); //Таблиця StructTab установлюється в якості джерела даних для візуальної компоненти DatGridDBTables, яка буде відображати дані цієї таблиці в формі строки 242 243
+            DataColumn NewDatCol = new DataColumn("Tables", Type.GetType("System.String"));
             NewDatCol.AllowDBNull = false;
             NewDatCol.Unique = true;
             StructTab.Columns.Add(NewDatCol);
-            NewDatCol = new System.Data.DataColumn("Fields", System.Type.GetType("System.String"));
+            NewDatCol = new DataColumn("Fields", Type.GetType("System.String"));
             NewDatCol.AllowDBNull = false;
             NewDatCol.DefaultValue = "none;";
             StructTab.Columns.Add(NewDatCol);
@@ -117,10 +117,10 @@ namespace WindowsFormsApp1
             DatGridDBTables.ReadOnly = false;
             datGridSQLResult.DataSource = RequestTab; //(Спочатку див. строку 233) В якості джерела тут також виступає StructTab
             //Підключаєм до таблиці оброблювач події зміни строки:
-            StructTab.RowChanged += new System.Data.DataRowChangeEventHandler(StructTab_OnRowChanged); //Підключення обробника подій зміни строки StructTab.RowChanged
+            StructTab.RowChanged += new DataRowChangeEventHandler(StructTab_OnRowChanged); //Підключення обробника подій зміни строки StructTab.RowChanged
         }
 
-        private void StructTab_OnRowChanged(object sender, System.Data.DataRowChangeEventArgs e)
+        private void StructTab_OnRowChanged(object sender, DataRowChangeEventArgs e)
         {
             try
             {
