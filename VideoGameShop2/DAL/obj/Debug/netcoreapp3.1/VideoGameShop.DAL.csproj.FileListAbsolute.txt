@@ -1,0 +1,10 @@
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\bin\Debug\netcoreapp3.1\VideoGameShop.DAL.deps.json
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\bin\Debug\netcoreapp3.1\VideoGameShop.DAL.runtimeconfig.json
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\bin\Debug\netcoreapp3.1\VideoGameShop.DAL.runtimeconfig.dev.json
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\bin\Debug\netcoreapp3.1\VideoGameShop.DAL.dll
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\bin\Debug\netcoreapp3.1\VideoGameShop.DAL.pdb
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\obj\Debug\netcoreapp3.1\VideoGameShop.DAL.csprojAssemblyReference.cache
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\obj\Debug\netcoreapp3.1\VideoGameShop.DAL.AssemblyInfoInputs.cache
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\obj\Debug\netcoreapp3.1\VideoGameShop.DAL.AssemblyInfo.cs
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\obj\Debug\netcoreapp3.1\VideoGameShop.DAL.dll
+C:\Users\Anton\source\repos\VideoGameShop2\DAL\obj\Debug\netcoreapp3.1\VideoGameShop.DAL.pdb
