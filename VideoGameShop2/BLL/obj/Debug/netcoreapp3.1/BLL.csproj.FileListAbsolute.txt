@@ -6,3 +6,6 @@ C:\Users\Anton\source\repos\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.Assem
 C:\Users\Anton\source\repos\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
 C:\Users\Anton\source\repos\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.dll
 C:\Users\Anton\source\repos\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
+C:\Users\Anton\source\repos\VideoGameShop2\BLL\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\Anton\source\repos\VideoGameShop2\BLL\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\Anton\source\repos\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete

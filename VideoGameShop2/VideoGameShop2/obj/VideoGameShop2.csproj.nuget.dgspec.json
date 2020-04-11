@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\VideoGameShop2\\VideoGameShop2.csproj": {}
+    "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\VideoGameShop2\\VideoGameShop2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\DAL\\DAL.csproj": {
+    "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -71,14 +71,14 @@
         }
       }
     },
-    "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\VideoGameShop2\\VideoGameShop2.csproj": {
+    "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\VideoGameShop2\\VideoGameShop2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\VideoGameShop2\\VideoGameShop2.csproj",
+        "projectUniqueName": "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\VideoGameShop2\\VideoGameShop2.csproj",
         "projectName": "VideoGameShop2",
-        "projectPath": "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\VideoGameShop2\\VideoGameShop2.csproj",
+        "projectPath": "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\VideoGameShop2\\VideoGameShop2.csproj",
         "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\VideoGameShop2\\obj\\",
+        "outputPath": "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\VideoGameShop2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -97,8 +97,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Anton\\source\\repos\\VideoGameShop2\\DAL\\DAL.csproj"
+              "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Anton\\Desktop\\shelter\\VideoGameShop2\\DAL\\DAL.csproj"
               }
             }
           }
