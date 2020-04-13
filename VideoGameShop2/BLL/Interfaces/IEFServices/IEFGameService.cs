@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿using BLL.DTO;
+using DAL.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,14 +7,14 @@ namespace BLL.Interfaces.IEFServices
 {
     public interface IEFGameService
     {
-        Task AddGame(Game game);
+        Task AddGame(GameDTO game);
 
-        Task UpdateGame(Game game);
+        Task UpdateGame(GameDTO game);
 
-        Task DeleteGame(Game game);
+        Task DeleteGame(int Id);
 
-        Task<Game> GetGameById(int Id);
+        Task<GameDTO> GetGameById(int Id);
 
-        Task<IEnumerable<Game>> GetAllGames();
+        Task<IEnumerable<GameDTO>> GetAllGames();
     }
 }

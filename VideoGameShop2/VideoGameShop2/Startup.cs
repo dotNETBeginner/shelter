@@ -12,6 +12,15 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using DAL.DbContexts;
+using DAL.Interfaces.EFInterfaces.IEFRepositories;
+using DAL.Repositories.EFRepositories;
+using DAL.Interfaces;
+using DAL.UnitOfWork;
+using BLL.Interfaces.IEFServices;
+using BLL.Services.EF_Services;
+using AutoMapper;
+using DAL.Entities;
+using BLL.DTO;
 
 namespace VideoGameShop2
 {
@@ -31,6 +40,40 @@ namespace VideoGameShop2
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("VideoGameShop2"));
             });
+
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.CreateMap<Developer, DeveloperDTO>();
+                cfg.CreateMap<Game, GameDTO>();
+                cfg.CreateMap<Genre, GenreDTO>();
+                cfg.CreateMap<Publisher, PublisherDTO>();
+                cfg.CreateMap<UserBought, UserBoughtDTO>();
+                cfg.CreateMap<User, UserDTO>();
+
+                cfg.CreateMap<DeveloperDTO, Developer>();
+                cfg.CreateMap<GameDTO, Game>();
+                cfg.CreateMap<GenreDTO, Genre>();
+                cfg.CreateMap<PublisherDTO, Publisher>();
+                cfg.CreateMap<UserBoughtDTO, UserBought>();
+                cfg.CreateMap<UserDTO, User>();
+            }, typeof(Startup));
+
+            services.AddTransient<IEFDeveloperRepository, EFDeveloperRepository>();
+            services.AddTransient<IEFGameRepository, EFGameRepository>();
+            services.AddTransient<IEFGenreRepository, EFGenreRepository>();
+            services.AddTransient<IEFPublisherRepository, EFPublisherRepository>();
+            services.AddTransient<IEFUserBoughtRepository, EFUserBoughtRepository>();
+            services.AddTransient<IEFUserRepository, EFUserRepository>();
+
+            services.AddTransient<IEFUnitOfWork, EFUnitOfWork>();
+
+            services.AddTransient<IEFDeveloperService,EFDeveloperService>();
+            services.AddTransient<IEFGameService, EFGameService>();
+            services.AddTransient<IEFGenreService,EFGenreService>();
+            services.AddTransient<IEFPublisherService, EFPublisherService>();
+            services.AddTransient<IEFUserBoughtService,EFUserBoughtService>();
+            services.AddTransient<IEFUserService,EFUserService>();
+
             services.AddControllers();
         }
 

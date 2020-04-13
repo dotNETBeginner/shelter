@@ -12,7 +12,7 @@ namespace DAL.Interfaces.EFInterfaces.IEFRepositories
 
         Task AddDeveloper(Developer developer);
 
-        Task DeleteDeveloper(Developer developer);
+        Task DeleteDeveloper(int Id);
 
         Task UpdateDeveloper(Developer developer);
     }

@@ -1,19 +1,20 @@
 ﻿using DAL.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BLL.DTO;
 
 namespace BLL.Interfaces.IEFServices
 {
     public interface IEFUserBoughtService
     {
-        Task AddUserBought(UserBought userBought);
+        Task AddUserBought(UserBoughtDTO userBought);
 
-        Task UpdateUserBought(UserBought userBought);
+        Task UpdateUserBought(UserBoughtDTO userBought);
 
-        Task DeleteUserBought(UserBought userBought);
+        Task DeleteUserBought(int Id);
 
-        Task<UserBought> GetUserBoughtById(int Id);
+        Task<UserBoughtDTO> GetUserBoughtById(int Id);
 
-        Task<IEnumerable<UserBought>> GetAllUserBoughts();
+        Task<IEnumerable<UserBoughtDTO>> GetAllUserBoughts();
     }
 }

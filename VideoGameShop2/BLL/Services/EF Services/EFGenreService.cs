@@ -1,33 +1,57 @@
-﻿using BLL.Interfaces.IEFServices;
+﻿using BLL.DTO;
+using BLL.Interfaces.IEFServices;
 using DAL.Entities;
 using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace BLL.Services.EF_Services
 {
     public class EFGenreService : IEFGenreService
     {
         IEFUnitOfWork _efUnitOfWork;
+        private readonly IMapper _mapper;
 
-        public EFGenreService(IEFUnitOfWork efunitOfWork)
-        { _efUnitOfWork = efunitOfWork; }
+        public EFGenreService(IEFUnitOfWork efunitOfWork, IMapper mapper)
+        {
+            _efUnitOfWork = efunitOfWork;
+            _mapper = mapper;
+        }
 
-        public async Task<IEnumerable<Genre>> GetAllGenres()
-        { return await _efUnitOfWork.EFGenreRepository.GetAll(); }
+        public async Task<IEnumerable<GenreDTO>> GetAllGenres()
+        {
+            var x = await _efUnitOfWork.EFGenreRepository.GetAll();
+            List<GenreDTO> res = new List<GenreDTO>();
+            foreach (var i in x)
+                res.Add(_mapper.Map<Genre, GenreDTO>(i));
 
-        public async Task<Genre> GetGenreById(int Id)
-        { return await _efUnitOfWork.EFGenreRepository.Get(Id); }
+            return res;
+        }
 
-        public async Task AddGenre(Genre genre)
-        { await _efUnitOfWork.EFGenreRepository.Add(genre); }
+        public async Task<GenreDTO> GetGenreById(int Id)
+        {
+            var x = await _efUnitOfWork.EFGenreRepository.Get(Id);
+            GenreDTO res = _mapper.Map<Genre, GenreDTO>(x);
 
-        public async Task DeleteGenre(Genre genre)
-        { await _efUnitOfWork.EFGenreRepository.Delete(genre); }
+            return res;
+        }
 
-        public async Task UpdateGenre(Genre genre)
-        { await _efUnitOfWork.EFGenreRepository.Update(genre); }
+        public async Task AddGenre(GenreDTO genre)
+        {
+            var x = _mapper.Map<GenreDTO, Genre>(genre);
+            await _efUnitOfWork.EFGenreRepository.Add(x);
+        }
+
+        public async Task DeleteGenre(int Id)
+        { await _efUnitOfWork.EFGenreRepository.Delete(Id); }
+
+        public async Task UpdateGenre(GenreDTO genre)
+        {
+            var x = _mapper.Map<GenreDTO, Genre>(genre);
+            await _efUnitOfWork.EFGenreRepository.Update(x);
+        }
     }
 }

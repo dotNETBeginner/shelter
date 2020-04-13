@@ -12,7 +12,7 @@ namespace DAL.Interfaces.EFInterfaces.IEFRepositories
 
         Task AddUserBought(UserBought userBought);
 
-        Task DeleteUserBought(UserBought userBought);
+        Task DeleteUserBought(int Id);
 
         Task UpdateUserBought(UserBought userBought);
     }

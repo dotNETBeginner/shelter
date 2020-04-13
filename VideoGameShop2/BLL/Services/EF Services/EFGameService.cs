@@ -1,33 +1,57 @@
-﻿using BLL.Interfaces.IEFServices;
+﻿using BLL.DTO;
+using BLL.Interfaces.IEFServices;
 using DAL.Entities;
 using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace BLL.Services.EF_Services
 {
     public class EFGameService : IEFGameService
     {
         IEFUnitOfWork _efUnitOfWork;
+        private readonly IMapper _mapper;
 
-        public EFGameService(IEFUnitOfWork efunitOfWork)
-        { _efUnitOfWork = efunitOfWork; }
+        public EFGameService(IEFUnitOfWork efunitOfWork, IMapper mapper)
+        {
+            _efUnitOfWork = efunitOfWork;
+            _mapper = mapper;
+        }
 
-        public async Task<IEnumerable<Game>> GetAllGames()
-        { return await _efUnitOfWork.EFGameRepository.GetAll(); }
+        public async Task<IEnumerable<GameDTO>> GetAllGames()
+        {
+            var x = await _efUnitOfWork.EFGameRepository.GetAll();
+            List<GameDTO> res = new List<GameDTO>();
+            foreach (var i in x)
+                res.Add(_mapper.Map<Game, GameDTO>(i));
 
-        public async Task<Game> GetGameById(int Id)
-        { return await _efUnitOfWork.EFGameRepository.Get(Id); }
+            return res;
+        }
 
-        public async Task AddGame(Game game)
-        { await _efUnitOfWork.EFGameRepository.Add(game); }
+        public async Task<GameDTO> GetGameById(int Id)
+        {
+            var x = await _efUnitOfWork.EFGameRepository.Get(Id);
+            GameDTO res = _mapper.Map<Game, GameDTO>(x);
 
-        public async Task DeleteGame(Game game)
-        { await _efUnitOfWork.EFGameRepository.Delete(game); }
+            return res;
+        }
 
-        public async Task UpdateGame(Game game)
-        { await _efUnitOfWork.EFGameRepository.Update(game); }
+        public async Task AddGame(GameDTO game)
+        {
+            var x = _mapper.Map<GameDTO, Game>(game);
+            await _efUnitOfWork.EFGameRepository.Add(x);
+        }
+
+        public async Task DeleteGame(int Id)
+        { await _efUnitOfWork.EFGameRepository.Delete(Id); }
+
+        public async Task UpdateGame(GameDTO game)
+        {
+            var x = _mapper.Map<GameDTO, Game>(game);
+            await _efUnitOfWork.EFGameRepository.Update(x);
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace DAL.Interfaces.EFInterfaces.IEFRepositories
 
         Task AddGenre(Genre genre);
 
-        Task DeleteGenre(Genre genre);
+        Task DeleteGenre(int Id);
 
         Task UpdateGenre(Genre genre);
     }

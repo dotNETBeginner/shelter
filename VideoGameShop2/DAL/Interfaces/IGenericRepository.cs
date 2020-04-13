@@ -16,6 +16,6 @@ namespace DAL.Interfaces
 
         Task Update(TEntity entity);
 
-        Task Delete(TEntity entity);
+        Task Delete(TId id);
     }
 }

@@ -32,9 +32,9 @@ namespace DAL.Repositories.EFRepositories
             await _dbcontext.AddAsync(userBought);
         }
 
-        public async Task DeleteUserBought(UserBought userBought)
+        public async Task DeleteUserBought(int Id)
         {
-            _dbcontext.Entry(userBought).State = EntityState.Deleted;
+            _dbcontext.Entry(Id).State = EntityState.Deleted;
             await _dbcontext.SaveChangesAsync();
         }
 

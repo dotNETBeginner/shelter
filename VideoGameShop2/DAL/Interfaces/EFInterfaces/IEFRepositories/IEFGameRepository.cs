@@ -12,7 +12,7 @@ namespace DAL.Interfaces.EFInterfaces.IEFRepositories
 
         Task AddGame(Game game);
 
-        Task DeleteGame(Game game);
+        Task DeleteGame(int Id);
 
         Task UpdateGame(Game game);
     }

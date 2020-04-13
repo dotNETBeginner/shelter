@@ -32,9 +32,9 @@ namespace DAL.Repositories.EFRepositories
             await _dbcontext.AddAsync(publisher);
         }
 
-        public async Task DeletePublisher(Publisher publisher)
+        public async Task DeletePublisher(int Id)
         {
-            _dbcontext.Entry(publisher).State = EntityState.Deleted;
+            _dbcontext.Entry(Id).State = EntityState.Deleted;
             await _dbcontext.SaveChangesAsync();
         }
 

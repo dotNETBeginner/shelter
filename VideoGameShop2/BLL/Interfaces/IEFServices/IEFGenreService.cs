@@ -1,19 +1,20 @@
 ﻿using DAL.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BLL.DTO;
 
 namespace BLL.Interfaces.IEFServices
 {
     public interface IEFGenreService
     {
-        Task AddGenre(Genre genre);
+        Task AddGenre(GenreDTO genre);
 
-        Task UpdateGenre(Genre genre);
+        Task UpdateGenre(GenreDTO genre);
 
-        Task DeleteGenre(Genre genre);
+        Task DeleteGenre(int Id);
 
-        Task<Genre> GetGenreById(int Id);
+        Task<GenreDTO> GetGenreById(int Id);
 
-        Task<IEnumerable<Genre>> GetAllGenres();
+        Task<IEnumerable<GenreDTO>> GetAllGenres();
     }
 }

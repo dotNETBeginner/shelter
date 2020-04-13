@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.DTO;
+using BLL.Interfaces.IEFServices;
 using DAL.DbContexts;
 using DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -11,12 +13,59 @@ namespace VideoGameShop2.Controllers
     [Route("api/[controller]")]
     public class GameController : Controller
     {
-        private readonly MyDbContext _dbcontext;
-        public GameController(MyDbContext dbcontext)
-        { _dbcontext = dbcontext; }
+        IEFGameService _efGameService;
+
+        public GameController(IEFGameService efGameService)
+        { _efGameService = efGameService; }
 
         [HttpGet]
-        public IEnumerable<Game> Get()
-        { return _dbcontext.Set<Game>().ToList(); }
+        public async Task<IActionResult> Get()
+        {
+            try { return Ok(await _efGameService.GetAllGames()); }
+            catch { return StatusCode(404); }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int Id)
+        {
+            try { return Ok(await _efGameService.GetGameById(Id)); }
+            catch { return StatusCode(404); }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int Id)
+        {
+            try
+            {
+                await _efGameService.DeleteGame(Id);
+                return StatusCode(204);
+            }
+            catch
+            { return StatusCode(404); }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] GameDTO val)
+        {
+            try
+            {
+                await _efGameService.UpdateGame(val);
+                return StatusCode(204);
+            }
+            catch
+            { return StatusCode(404); }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] GameDTO val)
+        {
+            try
+            {
+                await _efGameService.AddGame(val);
+                return StatusCode(201);
+            }
+            catch
+            { return StatusCode(404); }
+        }
     }
 }

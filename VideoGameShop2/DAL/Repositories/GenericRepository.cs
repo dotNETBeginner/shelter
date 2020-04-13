@@ -31,9 +31,9 @@ namespace DAL.Repositories
             await _dbcontext.SaveChangesAsync();
         }
 
-        public async Task Delete(TEntity entity)
+        public async Task Delete(TId Id)
         { 
-            _dbcontext.Entry(entity).State = EntityState.Deleted;
+            _dbcontext.Entry(Id).State = EntityState.Deleted;
             await _dbcontext.SaveChangesAsync();
         }
     }

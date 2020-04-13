@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿using BLL.DTO;
+using DAL.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,14 +7,14 @@ namespace BLL.Interfaces.IEFServices
 {
     public interface IEFDeveloperService
     {
-        Task AddDeveloper(Developer developer);
+        Task AddDeveloper(DeveloperDTO developer);
 
-        Task UpdateDeveloper(Developer developer);
+        Task UpdateDeveloper(DeveloperDTO developer);
 
-        Task DeleteDeveloper(Developer developer);
+        Task DeleteDeveloper(int Id);
 
-        Task<Developer> GetDeveloperById(int Id);
+        Task<DeveloperDTO> GetDeveloperById(int Id);
 
-        Task<IEnumerable<Developer>> GetAllDevelopers();
+        Task<IEnumerable<DeveloperDTO>> GetAllDevelopers();
     }
 }

@@ -1,20 +1,21 @@
 ﻿using DAL.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BLL.DTO;
 
 namespace BLL.Interfaces.IEFServices
 {
     public interface IEFPublisherService
     {
-        Task AddPublisher(Publisher publisher);
+        Task AddPublisher(PublisherDTO publisher);
 
-        Task UpdatePublisher(Publisher publisher);
+        Task UpdatePublisher(PublisherDTO publisher);
 
-        Task DeletePublisher(Publisher publisher);
+        Task DeletePublisher(int Id);
 
-        Task<Publisher> GetPublisherById(int Id);
+        Task<PublisherDTO> GetPublisherById(int Id);
 
-        Task<IEnumerable<Publisher>> GetAllPublishers();
+        Task<IEnumerable<PublisherDTO>> GetAllPublishers();
     }
 }
 

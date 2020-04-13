@@ -32,9 +32,9 @@ namespace DAL.Repositories.EFRepositories
             await _dbcontext.AddAsync(game);
         }
 
-        public async Task DeleteGame(Game game)
+        public async Task DeleteGame(int Id)
         {
-            _dbcontext.Entry(game).State = EntityState.Deleted;
+            _dbcontext.Entry(Id).State = EntityState.Deleted;
             await _dbcontext.SaveChangesAsync();
         }
 

@@ -12,7 +12,7 @@ namespace DAL.Interfaces.EFInterfaces.IEFRepositories
 
         Task AddPublisher(Publisher publisher);
 
-        Task DeletePublisher(Publisher publisher);
+        Task DeletePublisher(int Id);
 
         Task UpdatePublisher(Publisher publisher);
     }
