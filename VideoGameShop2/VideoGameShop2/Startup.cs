@@ -21,6 +21,7 @@ using BLL.Services.EF_Services;
 using AutoMapper;
 using DAL.Entities;
 using BLL.DTO;
+using DAL.Repositories;
 
 namespace VideoGameShop2
 {

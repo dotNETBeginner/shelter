@@ -6,14 +6,6 @@ namespace DAL.Interfaces.EFInterfaces.IEFRepositories
 {
     public interface IEFPublisherRepository : IGenericRepository<Publisher,int>
     {
-        Task<IEnumerable<Publisher>> GetAllPublishers();
-
-        Task<Publisher> GetPublisherById(int Id);
-
-        Task AddPublisher(Publisher publisher);
-
-        Task DeletePublisher(int Id);
-
-        Task UpdatePublisher(Publisher publisher);
+       
     }
 }

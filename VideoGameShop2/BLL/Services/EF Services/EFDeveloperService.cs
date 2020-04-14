@@ -51,7 +51,7 @@ namespace BLL.Services.EF_Services
         public async Task UpdateDeveloper(DeveloperDTO developer)
         {
             var x = _mapper.Map<DeveloperDTO, Developer>(developer);
-            await _efUnitOfWork.EFDeveloperRepository.UpdateDeveloper(x);
+            await _efUnitOfWork.EFDeveloperRepository.Update(x);
         }
     }
 }

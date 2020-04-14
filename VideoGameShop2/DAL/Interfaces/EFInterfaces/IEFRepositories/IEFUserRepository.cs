@@ -6,14 +6,6 @@ namespace DAL.Interfaces.EFInterfaces.IEFRepositories
 {
     public interface IEFUserRepository : IGenericRepository<User,int>
     {
-        Task<IEnumerable<User>> GetAllUsers();
-
-        Task<User> GetUserById(int Id);
-
-        Task AddUser(User user);
-
-        Task DeleteUser(int Id);
-
-        Task UpdateUser(User user);
+       
     }
 }

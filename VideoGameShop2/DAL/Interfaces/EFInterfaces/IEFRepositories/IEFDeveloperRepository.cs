@@ -6,14 +6,6 @@ namespace DAL.Interfaces.EFInterfaces.IEFRepositories
 {
     public interface IEFDeveloperRepository : IGenericRepository<Developer, int>
     {
-        Task<IEnumerable<Developer>> GetAllDevelopers();
-
-        Task<Developer> GetDeveloperById(int Id);
-
-        Task AddDeveloper(Developer developer);
-
-        Task DeleteDeveloper(int Id);
-
-        Task UpdateDeveloper(Developer developer);
+       
     }
 }

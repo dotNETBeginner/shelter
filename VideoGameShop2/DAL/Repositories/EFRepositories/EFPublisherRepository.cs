@@ -16,32 +16,5 @@ namespace DAL.Repositories.EFRepositories
         public EFPublisherRepository(MyDbContext dbcontext)
             : base(dbcontext)
         { }
-
-        public async Task<IEnumerable<Publisher>> GetAllPublishers()
-        {
-            return await _dbcontext.Set<Publisher>().ToListAsync();
-        }
-
-        public async Task<Publisher> GetPublisherById(int Id)
-        {
-            return await _dbcontext.Set<Publisher>().FindAsync(Id);
-        }
-
-        public async Task AddPublisher(Publisher publisher)
-        {
-            await _dbcontext.AddAsync(publisher);
-        }
-
-        public async Task DeletePublisher(int Id)
-        {
-            _dbcontext.Entry(Id).State = EntityState.Deleted;
-            await _dbcontext.SaveChangesAsync();
-        }
-
-        public async Task UpdatePublisher(Publisher publisher)
-        {
-            _dbcontext.Entry(publisher).State = EntityState.Deleted;
-            await _dbcontext.SaveChangesAsync();
-        }
     }
 }

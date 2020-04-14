@@ -23,7 +23,10 @@ namespace DAL.Repositories
         { return await _dbcontext.Set<TEntity>().FindAsync(id); }
 
         public async Task Add(TEntity entity)
-        { await _dbcontext.AddAsync(entity); }
+        {  
+            _dbcontext.Add(entity);
+            await _dbcontext.SaveChangesAsync();
+        }
 
         public async Task Update(TEntity entity)
         { 
@@ -32,8 +35,8 @@ namespace DAL.Repositories
         }
 
         public async Task Delete(TId Id)
-        { 
-            _dbcontext.Entry(Id).State = EntityState.Deleted;
+        {
+            _dbcontext.Remove(_dbcontext.Set<TEntity>().Find(Id));
             await _dbcontext.SaveChangesAsync();
         }
     }
