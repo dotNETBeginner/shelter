@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DAL.DbContexts
 {
-    public class MyDbContext : DbContext
+    public class MyDbContext : IdentityDbContext<User>
     {
         DbSet <Developer> Developers { get; set; }
         DbSet <Game> Games { get; set; }
@@ -15,6 +16,7 @@ namespace DAL.DbContexts
         DbSet <User> Users { get; set; }
         DbSet <UserBought> UserBoughts { get; set; }
         
+
         public MyDbContext(DbContextOptions<MyDbContext> options)
             :base(options)
         {
@@ -32,9 +34,6 @@ namespace DAL.DbContexts
             modelBuilder.Entity<Developer>()
                 .Property(p => p.Name)
                 .HasMaxLength(50);
-            //modelBuilder.Entity<Developer>()
-               // .Property(p => p.Id_Publisher)
-                //.IsRequired(false);
             modelBuilder.Entity<Developer>()
                 .HasOne<Publisher>()
                 .WithMany()
@@ -46,12 +45,6 @@ namespace DAL.DbContexts
             modelBuilder.Entity<Game>()
                 .Property(p => p.Name)
                 .HasMaxLength(50);
-            //modelBuilder.Entity<Game>()
-               // .Property(p => p.Id_Dev)
-                //.IsRequired(false);
-            //modelBuilder.Entity<Game>()
-              //  .Property(p => p.Id_Genre)
-                //.IsRequired(false);
             modelBuilder.Entity<Game>()
                 .HasOne<Developer>()
                 .WithMany()
@@ -91,10 +84,10 @@ namespace DAL.DbContexts
             modelBuilder.Entity<User>()
                 .HasKey(p => p.Id);
             modelBuilder.Entity<User>()
-                .Property(p => p.Nickname)
+                .Property(p => p.UserName)
                 .HasMaxLength(30);
             modelBuilder.Entity<User>()
-                .Property(p => p.Password)
+                .Property(p => p.PasswordHash)
                 .HasMaxLength(50);
 
         }

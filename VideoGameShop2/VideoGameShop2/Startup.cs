@@ -22,6 +22,7 @@ using AutoMapper;
 using DAL.Entities;
 using BLL.DTO;
 using DAL.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 namespace VideoGameShop2
 {
@@ -41,6 +42,9 @@ namespace VideoGameShop2
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("VideoGameShop2"));
             });
+
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<MyDbContext>();
 
             services.AddAutoMapper(cfg =>
             {
@@ -90,6 +94,7 @@ namespace VideoGameShop2
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
