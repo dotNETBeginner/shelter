@@ -16,5 +16,8 @@ namespace DAL.Repositories.EFRepositories
         public EFPublisherRepository(MyDbContext dbcontext)
             : base(dbcontext)
         { }
+
+        public async Task<Publisher> GetGenreByName(string name)
+        { return await _dbcontext.Set<Publisher>().FindAsync(name); }
     }
 }

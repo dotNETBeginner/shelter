@@ -1,8 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200415111027_NewIdentity.cs" />
+    <Compile Remove="Migrations\20200415111027_NewIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20200415112414_NewIdt.cs" />
+    <Compile Remove="Migrations\20200415112414_NewIdt.Designer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />

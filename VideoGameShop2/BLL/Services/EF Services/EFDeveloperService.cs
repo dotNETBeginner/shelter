@@ -53,5 +53,13 @@ namespace BLL.Services.EF_Services
             var x = _mapper.Map<DeveloperDTO, Developer>(developer);
             await _efUnitOfWork.EFDeveloperRepository.Update(x);
         }
+
+        public async Task<DeveloperDTO> GetDeveloperByName(string name)
+        {
+            var x = await _efUnitOfWork.EFDeveloperRepository.GetDeveloperByName(name);
+            DeveloperDTO res = _mapper.Map<Developer, DeveloperDTO>(x);
+
+            return res;
+        }
     }
 }

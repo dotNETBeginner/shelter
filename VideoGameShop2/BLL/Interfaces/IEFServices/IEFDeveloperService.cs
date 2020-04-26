@@ -16,5 +16,7 @@ namespace BLL.Interfaces.IEFServices
         Task<DeveloperDTO> GetDeveloperById(int Id);
 
         Task<IEnumerable<DeveloperDTO>> GetAllDevelopers();
+
+        Task<DeveloperDTO> GetDeveloperByName(string name);
     }
 }

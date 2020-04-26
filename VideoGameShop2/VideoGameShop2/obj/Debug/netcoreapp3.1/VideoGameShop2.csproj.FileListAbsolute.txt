@@ -259,12 +259,3 @@ C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreap
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\VideoGameShop2.Views.dll
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\VideoGameShop2.Views.pdb
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.RazorAssemblyInfo.cache
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.RazorAssemblyInfo.cs
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.TagHelpers.input.cache
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.TagHelpers.output.cache
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.RazorCoreGenerate.cache
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.RazorTargetAssemblyInfo.cs
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.Views.pdb

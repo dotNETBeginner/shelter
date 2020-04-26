@@ -8,7 +8,6 @@ namespace DAL.Interfaces
         IEFGameRepository EFGameRepository { get; }
         IEFGenreRepository EFGenreRepository { get; }
         IEFPublisherRepository EFPublisherRepository { get; }
-        IEFUserRepository EFUserRepository { get; }
         IEFUserBoughtRepository EFUserBoughtRepository { get; }
 
         void Complete();

@@ -7,13 +7,12 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DAL.DbContexts
 {
-    public class MyDbContext : IdentityDbContext<User>
+    public class MyDbContext : DbContext
     {
         DbSet <Developer> Developers { get; set; }
         DbSet <Game> Games { get; set; }
         DbSet <Genre> Genres { get; set;}
         DbSet <Publisher> Publishers { get; set; }
-        DbSet <User> Users { get; set; }
         DbSet <UserBought> UserBoughts { get; set; }
         
 
@@ -75,20 +74,13 @@ namespace DAL.DbContexts
                 .HasOne<Game>()
                 .WithMany()
                 .HasForeignKey(p => p.Id_Game);
-            modelBuilder.Entity<UserBought>()
-                .HasOne<User>()
-                .WithMany()
-                .HasForeignKey(p => p.Id_User);
+      
 
             //User
-            modelBuilder.Entity<User>()
-                .HasKey(p => p.Id);
-            modelBuilder.Entity<User>()
-                .Property(p => p.UserName)
-                .HasMaxLength(30);
-            modelBuilder.Entity<User>()
-                .Property(p => p.PasswordHash)
-                .HasMaxLength(50);
+      
+
+            //AppUser
+          
 
         }
     }

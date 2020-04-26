@@ -43,8 +43,6 @@ namespace VideoGameShop2
                 cfg.UseSqlServer(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("VideoGameShop2"));
             });
 
-            services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<MyDbContext>();
 
             services.AddAutoMapper(cfg =>
             {
@@ -53,14 +51,12 @@ namespace VideoGameShop2
                 cfg.CreateMap<Genre, GenreDTO>();
                 cfg.CreateMap<Publisher, PublisherDTO>();
                 cfg.CreateMap<UserBought, UserBoughtDTO>();
-                cfg.CreateMap<User, UserDTO>();
 
                 cfg.CreateMap<DeveloperDTO, Developer>();
                 cfg.CreateMap<GameDTO, Game>();
                 cfg.CreateMap<GenreDTO, Genre>();
                 cfg.CreateMap<PublisherDTO, Publisher>();
                 cfg.CreateMap<UserBoughtDTO, UserBought>();
-                cfg.CreateMap<UserDTO, User>();
             }, typeof(Startup));
 
             services.AddTransient<IEFDeveloperRepository, EFDeveloperRepository>();
@@ -68,7 +64,6 @@ namespace VideoGameShop2
             services.AddTransient<IEFGenreRepository, EFGenreRepository>();
             services.AddTransient<IEFPublisherRepository, EFPublisherRepository>();
             services.AddTransient<IEFUserBoughtRepository, EFUserBoughtRepository>();
-            services.AddTransient<IEFUserRepository, EFUserRepository>();
 
             services.AddTransient<IEFUnitOfWork, EFUnitOfWork>();
 
@@ -77,7 +72,6 @@ namespace VideoGameShop2
             services.AddTransient<IEFGenreService,EFGenreService>();
             services.AddTransient<IEFPublisherService, EFPublisherService>();
             services.AddTransient<IEFUserBoughtService,EFUserBoughtService>();
-            services.AddTransient<IEFUserService,EFUserService>();
 
             services.AddControllers();
         }

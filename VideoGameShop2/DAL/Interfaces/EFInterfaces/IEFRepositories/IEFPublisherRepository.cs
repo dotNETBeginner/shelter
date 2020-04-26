@@ -6,6 +6,6 @@ namespace DAL.Interfaces.EFInterfaces.IEFRepositories
 {
     public interface IEFPublisherRepository : IGenericRepository<Publisher,int>
     {
-       
+        Task<Publisher> GetGenreByName(string name);
     }
 }

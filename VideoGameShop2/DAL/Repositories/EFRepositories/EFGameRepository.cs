@@ -16,5 +16,13 @@ namespace DAL.Repositories.EFRepositories
         public EFGameRepository(MyDbContext dbcontext)
             : base(dbcontext)
         { }
+
+        public async Task<Game> GetGameByName(string name)
+        { return await _dbcontext.Set<Game>().FindAsync(name); }
+
+        public async Task<Game>  GetCheapestGame()
+        {
+            return await _dbcontext.Set<Game>().MinAsync();
+        }
     }
 }

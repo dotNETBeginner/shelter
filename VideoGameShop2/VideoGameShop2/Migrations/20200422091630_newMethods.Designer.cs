@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace VideoGameShop2.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20200411083009_newLocationOfMigraton")]
-    partial class newLocationOfMigraton
+    [Migration("20200422091630_newMethods")]
+    partial class newMethods
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -101,29 +101,6 @@ namespace VideoGameShop2.Migrations
                     b.ToTable("Publishers");
                 });
 
-            modelBuilder.Entity("DAL.Entities.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("Money")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Nickname")
-                        .HasColumnType("nvarchar(30)")
-                        .HasMaxLength(30);
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("DAL.Entities.UserBought", b =>
                 {
                     b.Property<int>("Id")
@@ -134,14 +111,9 @@ namespace VideoGameShop2.Migrations
                     b.Property<int>("Id_Game")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_User")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("Id_Game");
-
-                    b.HasIndex("Id_User");
 
                     b.ToTable("UserBoughts");
                 });
@@ -175,12 +147,6 @@ namespace VideoGameShop2.Migrations
                     b.HasOne("DAL.Entities.Game", null)
                         .WithMany()
                         .HasForeignKey("Id_Game")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DAL.Entities.User", null)
-                        .WithMany()
-                        .HasForeignKey("Id_User")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

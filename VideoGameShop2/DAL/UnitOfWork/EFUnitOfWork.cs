@@ -13,21 +13,18 @@ namespace DAL.UnitOfWork
         private readonly IEFGenreRepository _efGenreRepository;
         private readonly IEFPublisherRepository _efPublisherRepository;
         private readonly IEFUserBoughtRepository _efUserBoughtRepository;
-        private readonly IEFUserRepository _efUserRepository;
 
         public EFUnitOfWork(IEFDeveloperRepository eFDeveloperRepository,
             IEFGameRepository eFGameRepository,
             IEFGenreRepository eFGenreRepository,
             IEFPublisherRepository eFPublisherRepository,
-            IEFUserBoughtRepository eFUserBoughtRepository,
-            IEFUserRepository eFUserRepository)
+            IEFUserBoughtRepository eFUserBoughtRepository)
         {
             _efDeveloperRepository = eFDeveloperRepository;
             _efGameRepository = eFGameRepository;
             _efGenreRepository = eFGenreRepository;
             _efPublisherRepository = eFPublisherRepository;
             _efUserBoughtRepository = eFUserBoughtRepository;
-            _efUserRepository = eFUserRepository;
         }
 
         public IEFDeveloperRepository EFDeveloperRepository
@@ -53,11 +50,6 @@ namespace DAL.UnitOfWork
         public IEFUserBoughtRepository EFUserBoughtRepository
         {
             get { return _efUserBoughtRepository; }
-        }
-
-        public IEFUserRepository EFUserRepository
-        {
-            get { return _efUserRepository; }
         }
 
         public void Complete()
