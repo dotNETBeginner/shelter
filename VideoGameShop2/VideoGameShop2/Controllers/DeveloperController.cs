@@ -26,7 +26,7 @@ namespace VideoGameShop2.Controllers
             catch { return StatusCode(404); }
         }
 
-       [HttpGet("{id}")]
+       [HttpGet("id/{id}")]
        public async Task<IActionResult> Get(int Id)
         {
             try { return Ok(await _efDeveloperService.GetDeveloperById(Id)); }
@@ -69,8 +69,8 @@ namespace VideoGameShop2.Controllers
             { return StatusCode(404); }
         }
 
-        [HttpGet("{name}")]
-        public async Task<IActionResult> GetByName(string name)
+        [HttpGet("name/{name}")]
+        public async Task<IActionResult> Get(string name)
         {
             try { return Ok(await _efDeveloperService.GetDeveloperByName(name)); }
             catch { return StatusCode(404); }

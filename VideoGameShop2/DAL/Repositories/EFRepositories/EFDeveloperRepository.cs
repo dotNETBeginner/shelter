@@ -21,7 +21,7 @@ namespace DAL.Repositories.EFRepositories
         //Надо оптимизировать
         public async Task <Developer> GetDeveloperByName(string name)
         {
-            var x = await _dbcontext.Set<Developer>().ToListAsync<Developer>();
+            var x = await _dbcontext.Set<Developer>().ToListAsync();
 
             return x.Where(x => x.Name == name).FirstOrDefault();
         }
