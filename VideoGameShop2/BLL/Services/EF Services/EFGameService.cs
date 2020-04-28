@@ -53,5 +53,21 @@ namespace BLL.Services.EF_Services
             var x = _mapper.Map<GameDTO, Game>(game);
             await _efUnitOfWork.EFGameRepository.Update(x);
         }
+
+        public async Task<GameDTO> GetGameByName(string name)
+        {
+            var x = await _efUnitOfWork.EFGameRepository.GetGameByName(name);
+            GameDTO res = _mapper.Map<Game, GameDTO>(x);
+
+            return res;
+        }
+
+        public async Task<GameDTO> GetCheapestGame()
+        {
+            var x = await _efUnitOfWork.EFGameRepository.GetCheapestGame();
+            GameDTO res = _mapper.Map<Game, GameDTO>(x);
+
+            return res;
+        }
     }
 }

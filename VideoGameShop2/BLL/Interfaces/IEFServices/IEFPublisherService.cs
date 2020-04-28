@@ -16,6 +16,8 @@ namespace BLL.Interfaces.IEFServices
         Task<PublisherDTO> GetPublisherById(int Id);
 
         Task<IEnumerable<PublisherDTO>> GetAllPublishers();
+
+        Task<PublisherDTO> GetPublisherByName(string name);
     }
 }
 

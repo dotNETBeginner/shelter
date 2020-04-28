@@ -16,5 +16,10 @@ namespace BLL.Interfaces.IEFServices
         Task<GameDTO> GetGameById(int Id);
 
         Task<IEnumerable<GameDTO>> GetAllGames();
+
+        Task<GameDTO> GetGameByName(string name);
+
+        Task<GameDTO> GetCheapestGame();
+
     }
 }

@@ -53,5 +53,13 @@ namespace BLL.Services.EF_Services
             var x = _mapper.Map<GenreDTO, Genre>(genre);
             await _efUnitOfWork.EFGenreRepository.Update(x);
         }
+
+        public async Task<GenreDTO> GetGenreByName(string name)
+        {
+            var x = await _efUnitOfWork.EFGenreRepository.GetGenreByName(name);
+            GenreDTO res = _mapper.Map<Genre, GenreDTO>(x);
+
+            return res;
+        }
     }
 }

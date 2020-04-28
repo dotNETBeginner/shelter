@@ -6,18 +6,22 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace DAL.Repositories.EFRepositories
 {
     public class EFPublisherRepository : GenericRepository<Publisher, int>, IEFPublisherRepository
     {
-        private readonly MyDbContext _dbcontext;
 
         public EFPublisherRepository(MyDbContext dbcontext)
             : base(dbcontext)
         { }
 
-        public async Task<Publisher> GetGenreByName(string name)
-        { return await _dbcontext.Set<Publisher>().FindAsync(name); }
+        public async Task<Publisher> GetPublisherByName(string name)
+        {
+            var x = await _dbcontext.Set<Publisher>().ToListAsync();
+
+            return x.Where(x => x.Name == name).FirstOrDefault();
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace VideoGameShop2.Controllers
             catch { return StatusCode(404); }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public async Task<IActionResult> Get(int Id)
         {
             try { return Ok(await _efGameService.GetGameById(Id)); }
@@ -66,6 +66,20 @@ namespace VideoGameShop2.Controllers
             }
             catch
             { return StatusCode(404); }
+        }
+
+        [HttpGet("name/{name}")]
+        public async Task<IActionResult> Get(string name)
+        {
+            try { return Ok(await _efGameService.GetGameByName(name)); }
+            catch { return StatusCode(404); }
+        }
+
+        [HttpGet("cheap")]
+        public async Task<IActionResult> GetCheapest()
+        {
+            try { return Ok(await _efGameService.GetCheapestGame());}
+            catch { return StatusCode(404); }
         }
     }
 }

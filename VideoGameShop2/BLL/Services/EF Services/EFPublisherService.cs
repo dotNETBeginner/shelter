@@ -53,5 +53,13 @@ namespace BLL.Services.EF_Services
             var x = _mapper.Map<PublisherDTO, Publisher>(publisher);
             await _efUnitOfWork.EFPublisherRepository.Update(x);
         }
+
+        public async Task<PublisherDTO> GetPublisherByName(string name)
+        {
+            var x = await _efUnitOfWork.EFPublisherRepository.GetPublisherByName(name);
+            PublisherDTO res = _mapper.Map<Publisher, PublisherDTO>(x);
+
+            return res;
+        }
     }
 }

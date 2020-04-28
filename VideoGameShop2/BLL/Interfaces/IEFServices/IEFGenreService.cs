@@ -16,5 +16,7 @@ namespace BLL.Interfaces.IEFServices
         Task<GenreDTO> GetGenreById(int Id);
 
         Task<IEnumerable<GenreDTO>> GetAllGenres();
+
+        Task<GenreDTO> GetGenreByName(string name);
     }
 }
