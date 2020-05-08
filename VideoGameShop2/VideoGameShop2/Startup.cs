@@ -1,15 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using DAL.DbContexts;
 using DAL.Interfaces.EFInterfaces.IEFRepositories;
@@ -21,8 +14,7 @@ using BLL.Services.EF_Services;
 using AutoMapper;
 using DAL.Entities;
 using BLL.DTO;
-using DAL.Repositories;
-using Microsoft.AspNetCore.Identity;
+
 
 namespace VideoGameShop2
 {
@@ -43,6 +35,8 @@ namespace VideoGameShop2
                 cfg.UseSqlServer(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("VideoGameShop2"));
             });
 
+            services.AddIdentity<User, MyRole>()
+                .AddEntityFrameworkStores<MyDbContext>();
 
             services.AddAutoMapper(cfg =>
             {
@@ -67,13 +61,15 @@ namespace VideoGameShop2
 
             services.AddTransient<IEFUnitOfWork, EFUnitOfWork>();
 
-            services.AddTransient<IEFDeveloperService,EFDeveloperService>();
+            services.AddTransient<IEFDeveloperService, EFDeveloperService>();
             services.AddTransient<IEFGameService, EFGameService>();
-            services.AddTransient<IEFGenreService,EFGenreService>();
+            services.AddTransient<IEFGenreService, EFGenreService>();
             services.AddTransient<IEFPublisherService, EFPublisherService>();
-            services.AddTransient<IEFUserBoughtService,EFUserBoughtService>();
+            services.AddTransient<IEFUserBoughtService, EFUserBoughtService>();
+            services.AddTransient<IEFUserService, EFUserService>();
 
-            services.AddControllers();
+            services.AddControllersWithViews();//
+            services.AddMvc();//
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,6 +82,8 @@ namespace VideoGameShop2
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();//
+            
             app.UseRouting();
 
             app.UseAuthentication();
@@ -93,7 +91,10 @@ namespace VideoGameShop2
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
             });
         }
     }

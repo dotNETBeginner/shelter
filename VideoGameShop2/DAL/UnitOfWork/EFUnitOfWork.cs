@@ -1,8 +1,8 @@
 ﻿using DAL.Interfaces;
 using DAL.Interfaces.EFInterfaces.IEFRepositories;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.AspNetCore.Identity;
+using DAL.Entities;
 
 namespace DAL.UnitOfWork
 {
@@ -13,18 +13,27 @@ namespace DAL.UnitOfWork
         private readonly IEFGenreRepository _efGenreRepository;
         private readonly IEFPublisherRepository _efPublisherRepository;
         private readonly IEFUserBoughtRepository _efUserBoughtRepository;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
+        private readonly RoleManager<MyRole> _roleManager;
 
         public EFUnitOfWork(IEFDeveloperRepository eFDeveloperRepository,
             IEFGameRepository eFGameRepository,
             IEFGenreRepository eFGenreRepository,
             IEFPublisherRepository eFPublisherRepository,
-            IEFUserBoughtRepository eFUserBoughtRepository)
+            IEFUserBoughtRepository eFUserBoughtRepository,
+            UserManager<User> userManager,
+            SignInManager<User> signInManager,
+            RoleManager<MyRole> roleManager)
         {
             _efDeveloperRepository = eFDeveloperRepository;
             _efGameRepository = eFGameRepository;
             _efGenreRepository = eFGenreRepository;
             _efPublisherRepository = eFPublisherRepository;
             _efUserBoughtRepository = eFUserBoughtRepository;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         public IEFDeveloperRepository EFDeveloperRepository
@@ -50,6 +59,21 @@ namespace DAL.UnitOfWork
         public IEFUserBoughtRepository EFUserBoughtRepository
         {
             get { return _efUserBoughtRepository; }
+        }
+
+        public UserManager<User> UserManager
+        {
+            get { return _userManager; }
+        }
+
+        public SignInManager<User> SignInManager
+        {
+            get { return _signInManager; }
+        }
+
+        public RoleManager<MyRole> RoleManager
+        {
+            get { return _roleManager; }
         }
 
         public void Complete()

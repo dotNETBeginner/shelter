@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DAL.Interfaces.EntityInterfaces
+﻿namespace DAL.Interfaces.EntityInterfaces
 {
     public interface IEntity<T>
     {

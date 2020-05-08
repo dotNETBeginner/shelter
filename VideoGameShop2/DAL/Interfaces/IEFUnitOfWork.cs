@@ -1,4 +1,6 @@
-﻿using DAL.Interfaces.EFInterfaces.IEFRepositories;
+﻿using DAL.Entities;
+using DAL.Interfaces.EFInterfaces.IEFRepositories;
+using Microsoft.AspNetCore.Identity;
 
 namespace DAL.Interfaces
 {
@@ -9,6 +11,9 @@ namespace DAL.Interfaces
         IEFGenreRepository EFGenreRepository { get; }
         IEFPublisherRepository EFPublisherRepository { get; }
         IEFUserBoughtRepository EFUserBoughtRepository { get; }
+        UserManager<User> UserManager { get; }
+        SignInManager<User> SignInManager { get; }
+        RoleManager<MyRole> RoleManager { get; }
 
         void Complete();
     }

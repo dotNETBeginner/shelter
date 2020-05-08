@@ -251,7 +251,6 @@ C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreap
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\BLL.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\BLL.pdb
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -259,3 +258,6 @@ C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreap
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\VideoGameShop2.Views.dll
+C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll

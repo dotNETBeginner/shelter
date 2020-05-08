@@ -2,9 +2,6 @@
 using DAL.Entities;
 using DAL.Interfaces.EFInterfaces.IEFRepositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using AutoMapper;

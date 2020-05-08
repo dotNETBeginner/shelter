@@ -1,13 +1,10 @@
 ﻿using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DAL.DbContexts
 {
-    public class MyDbContext : DbContext
+    public class MyDbContext : IdentityDbContext<User,MyRole,int>
     {
         DbSet <Developer> Developers { get; set; }
         DbSet <Game> Games { get; set; }
@@ -74,10 +71,13 @@ namespace DAL.DbContexts
                 .HasOne<Game>()
                 .WithMany()
                 .HasForeignKey(p => p.Id_Game);
-      
+            modelBuilder.Entity<UserBought>()
+                .HasOne<User>()
+                .WithMany()
+                .HasForeignKey(p => p.Id_User);
 
             //User
-      
+            
 
             //AppUser
           

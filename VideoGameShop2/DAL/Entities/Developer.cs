@@ -1,8 +1,4 @@
-﻿using DAL.Entities;
-using DAL.Interfaces.EntityInterfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DAL.Interfaces.EntityInterfaces;
 
 namespace DAL.Entities
 {
