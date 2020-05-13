@@ -14,7 +14,7 @@ using BLL.Services.EF_Services;
 using AutoMapper;
 using DAL.Entities;
 using BLL.DTO;
-
+using DAL.Seeding;
 
 namespace VideoGameShop2
 {
@@ -35,7 +35,13 @@ namespace VideoGameShop2
                 cfg.UseSqlServer(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("VideoGameShop2"));
             });
 
-            services.AddIdentity<User, MyRole>()
+            services.AddIdentity<User, MyRole>(opts =>
+            {
+                opts.Password.RequiredLength = 5;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireUppercase = false;
+            }
+            )
                 .AddEntityFrameworkStores<MyDbContext>();
 
             services.AddAutoMapper(cfg =>
@@ -51,7 +57,10 @@ namespace VideoGameShop2
                 cfg.CreateMap<GenreDTO, Genre>();
                 cfg.CreateMap<PublisherDTO, Publisher>();
                 cfg.CreateMap<UserBoughtDTO, UserBought>();
+                cfg.CreateMap<RoleDTO, MyRole>()
+                .ReverseMap();
             }, typeof(Startup));
+
 
             services.AddTransient<IEFDeveloperRepository, EFDeveloperRepository>();
             services.AddTransient<IEFGameRepository, EFGameRepository>();
@@ -67,6 +76,9 @@ namespace VideoGameShop2
             services.AddTransient<IEFPublisherService, EFPublisherService>();
             services.AddTransient<IEFUserBoughtService, EFUserBoughtService>();
             services.AddTransient<IEFUserService, EFUserService>();
+            services.AddTransient<IEFRoleService, EFRoleService>();
+
+            services.AddTransient<RoleInitializer>();
 
             services.AddControllersWithViews();//
             services.AddMvc();//
