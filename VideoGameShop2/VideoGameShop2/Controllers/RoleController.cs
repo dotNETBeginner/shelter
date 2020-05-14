@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BLL.Interfaces.IEFServices;
 using BLL.DTO;
+using System.Collections.Generic;
 
 namespace VideoGameShop2.Controllers
 {
@@ -42,5 +43,17 @@ namespace VideoGameShop2.Controllers
                 return StatusCode(404);
             }
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetRoleById([FromQuery]int id)
+        {
+            try
+            {
+                return Ok(await eFRoleService.GetRoleById(id));
+            }
+            catch { return StatusCode(404); }
+        }
+
     }
 }

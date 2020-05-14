@@ -1,4 +1,6 @@
 ﻿using BLL.DTO;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BLL.Interfaces.IEFServices
@@ -7,5 +9,6 @@ namespace BLL.Interfaces.IEFServices
     {
         Task CreateRole(RoleDTO role);
         Task AppointRole(int userId, string role);
+        Task<IList<string>> GetRoleById(int id);
     }
 }

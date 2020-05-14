@@ -9,13 +9,30 @@ namespace ХрестикиНолики
         public string Curs { get; set; }
         public bool isPlayerOnFigure { get; set; }
         public bool IsPlayerCreate { get; set; }
-        public int StepCount { get; set; }
-        //public bool isSteped { get; set; }
+        public bool isSteped { get; set; }
 
         public Player(string curs)
         {
             Curs = curs;
             isPlayerOnFigure = false;
+            isSteped = false;
+            IsPlayerCreate = false;
+        }
+
+        public string opposite()
+        {
+            if (Curs == "x")
+                return "o";
+            else
+                return "x";
+        }
+
+        public string Figure()
+        {
+            if (Curs == "x")
+                return "X";
+            else
+                return "O";
         }
     }
 
@@ -48,16 +65,30 @@ namespace ХрестикиНолики
             frame.Add(new string[] { "-", "-", "-" });
             Render(pl1);
 
+            Player AllPlayers = pl1;
+
             while (gameStatus)
             {
+                if(AllPlayers.isSteped)
+                { Switch(pl1, pl2, ref AllPlayers); }
+
                 var keyInfo = Console.ReadKey();
-                MovePlayer(keyInfo, pl2);
-                WhoWin(spike, ref gameStatus);
-                //MoveEnemy();
-                Render(pl1);
-                //keyInfo = Console.ReadKey();
-                //MovePlayer(keyInfo, pl2);
+                MovePlayer(keyInfo, AllPlayers);
+
+                Render(AllPlayers);
+
+                WhoWin(AllPlayers.Figure(), ref gameStatus);
             }
+        }
+
+        static void Switch(Player player1, Player player2, ref Player aP)
+        {
+            if (player1.isSteped == true)
+            { player1.isSteped = false; aP = player2; }
+            else if (player2.isSteped == true)
+            { player2.isSteped = false; aP = player1; } 
+
+
         }
 
         static void WhoWin(string f, ref bool gStatus)
@@ -120,7 +151,6 @@ namespace ХрестикиНолики
 
             string curs = sP.Curs;
 
-            frame[1][0] = curs;
 
             for (int x = frame.Count - 2; x >= 0; x -= 2)
             {
@@ -135,13 +165,11 @@ namespace ХрестикиНолики
                                 {
                                 if (sP.isPlayerOnFigure == true)//Проверка, находиться ли игрок на фигуре 
                                 { frame[x][y] = temp; sP.isPlayerOnFigure = false; }//Если да, то место откуда курсор игрока ушёл, появиться знак фигуры,
-                                else if (sP.IsPlayerCreate == true)
-                                { frame[x][y] = temp; sP.IsPlayerCreate = false; }
+                                if (sP.IsPlayerCreate == true)
+                                { frame[x][y] = temp; sP.IsPlayerCreate = false; sP.isSteped = true; }
                                 else
-                                    frame[x][y] = EmptyCell; //Если нет, то место просто станет опять пустым
-
+                                    frame[x][y] = EmptyCell; //Если нет, то место просто станет опять пустым 
                                 
-
                                     frame[x - 2][y] = curs;
                                     return;
                                 }
@@ -150,8 +178,8 @@ namespace ХрестикиНолики
 
                                     if (sP.isPlayerOnFigure == true)
                                     { frame[x][y] = temp; sP.isPlayerOnFigure = false; }
-                                    else if (sP.IsPlayerCreate == true)
-                                    { frame[x][y] = temp; sP.IsPlayerCreate = false; }
+                                    if (sP.IsPlayerCreate == true)
+                                    { frame[x][y] = temp; sP.IsPlayerCreate = false; sP.isSteped = true; }
                                     else
                                     frame[x][y] = EmptyCell;
 
@@ -159,8 +187,7 @@ namespace ХрестикиНолики
 
                                     temp = frame[x - 2][y]; //Знак фигуры сохраняется в переменной temp
                                     frame[x - 2][y] = curs;
-
-                                    return;
+                                return;
 
                                 }
                             }
@@ -171,11 +198,10 @@ namespace ХрестикиНолики
                             {
                                 if (sP.isPlayerOnFigure == true)
                                { frame[x][y] = temp; sP.isPlayerOnFigure = false; }
-                                else if (sP.IsPlayerCreate == true)
-                                { frame[x][y] = temp; sP.IsPlayerCreate = false; }
+                                if (sP.IsPlayerCreate == true)
+                                { frame[x][y] = temp; sP.IsPlayerCreate = false; sP.isSteped = true; }
                                 else
                                     frame[x][y] = EmptyCell;
-
                                 frame[x + 2][y] = curs;
                                 return;
                             }
@@ -183,8 +209,8 @@ namespace ХрестикиНолики
                                 {
                                     if (sP.isPlayerOnFigure == true)
                                     { frame[x][y] = temp; sP.isPlayerOnFigure = false; }
-                                    else if (sP.IsPlayerCreate == true)
-                                    { frame[x][y] = temp; sP.IsPlayerCreate = false; }
+                                    if (sP.IsPlayerCreate == true)
+                                    { frame[x][y] = temp; sP.IsPlayerCreate = false; sP.isSteped = true; }
                                     else
                                     frame[x][y] = EmptyCell;
 
@@ -192,8 +218,7 @@ namespace ХрестикиНолики
 
                                     temp = frame[x + 2][y];
                                     frame[x + 2][y] = curs;
-
-                                    return;
+                                return;
                                 }
                         }
 
@@ -203,11 +228,10 @@ namespace ХрестикиНолики
                             {
                                 if (sP.isPlayerOnFigure == true)
                                 { frame[x][y] = temp; sP.isPlayerOnFigure = false; }
-                                else if (sP.IsPlayerCreate == true)
-                                { frame[x][y] = temp; sP.IsPlayerCreate = false; }
+                                if (sP.IsPlayerCreate == true)
+                                { frame[x][y] = temp; sP.IsPlayerCreate = false; sP.isSteped = true; }
                                 else
                                     frame[x][y] = EmptyCell;
-
                                 frame[x][y + 1] = curs;
                                 return;
                             }
@@ -215,13 +239,12 @@ namespace ХрестикиНолики
                             {
                                 if (sP.isPlayerOnFigure == true)
                                 { frame[x][y] = temp; sP.isPlayerOnFigure = false; }
-                                else if (sP.IsPlayerCreate == true)
-                                { frame[x][y] = temp; sP.IsPlayerCreate = false; }
+                                if (sP.IsPlayerCreate == true)
+                                { frame[x][y] = temp; sP.IsPlayerCreate = false; sP.isSteped = true; }
                                 else
                                     frame[x][y] = EmptyCell;
 
                                 sP.isPlayerOnFigure = true;
-
                                 temp = frame[x][y + 1];
                                 frame[x][y + 1] = curs;
 
@@ -235,11 +258,10 @@ namespace ХрестикиНолики
                             {
                                 if (sP.isPlayerOnFigure == true)
                                 { frame[x][y] = temp; sP.isPlayerOnFigure = false; }
-                                else if (sP.IsPlayerCreate == true)
-                                { frame[x][y] = temp; sP.IsPlayerCreate = false; }
+                                if (sP.IsPlayerCreate == true)
+                                { frame[x][y] = temp; sP.IsPlayerCreate = false; sP.isSteped = true; }
                                 else
                                     frame[x][y] = EmptyCell;
-
                                 frame[x][y - 1] = curs;
                                 return;
                             }
@@ -247,13 +269,12 @@ namespace ХрестикиНолики
                             {
                                 if (sP.isPlayerOnFigure == true)
                                 { frame[x][y] = temp; sP.isPlayerOnFigure = false; }
-                                else if (sP.IsPlayerCreate == true)
-                                { frame[x][y] = temp; sP.IsPlayerCreate = false; }
+                                if (sP.IsPlayerCreate == true)
+                                { frame[x][y] = temp; sP.IsPlayerCreate = false; sP.isSteped = true; }
                                 else
                                     frame[x][y] = EmptyCell;
 
                                 sP.isPlayerOnFigure = true;
-
                                 temp = frame[x][y - 1];
                                 frame[x][y - 1] = curs;
 
@@ -265,7 +286,8 @@ namespace ХрестикиНолики
                         {
                             if(frame[x][y] != spike || frame[x][y] != circle)
                             {
-                                temp = spike;
+                                sP.IsPlayerCreate = true;
+                                temp = sP.Figure();
                                 sP.isPlayerOnFigure = true;
                             }
 
@@ -291,13 +313,24 @@ namespace ХрестикиНолики
 
         static void Render(Player sP)
         {
+            if (sP.isSteped)
+            {
+                for (int x = frame.Count - 2; x >= 0; x -= 2)
+                {
+                    for (int y = 0; y < frame[x].Length; y++)
+                    {
+                        if (frame[x][y] == sP.Curs)
+                        { frame[x][y] = sP.opposite(); }
+                    }
+                }
+            }
             Console.Clear();
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Управлять стрелками\n ставить хрестик на space\n игра уже не такая сырая (- _ -)\n");
             Console.ResetColor();
 
-            Console.WriteLine($"IsPlayerOnFigure : {sP.isPlayerOnFigure}\n");
+            Console.WriteLine($"IsPlayerOnFigure : {sP.isPlayerOnFigure}\n {sP.Curs}\n IsSteped : {sP.isSteped}\n isPlayerCreate : {sP.IsPlayerCreate}\n temp : {temp}");
 
             for (int x = 0; x < frame.Count; x++)
             {

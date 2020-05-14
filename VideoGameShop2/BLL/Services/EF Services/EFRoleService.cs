@@ -4,6 +4,7 @@ using BLL.Interfaces.IEFServices;
 using DAL.Entities;
 using DAL.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BLL.Services.EF_Services
@@ -30,6 +31,15 @@ namespace BLL.Services.EF_Services
             User user = await _eFUnitOfWork.UserManager.FindByIdAsync(Convert.ToString(userId));
 
             await _eFUnitOfWork.UserManager.AddToRoleAsync(user, role);
+        }
+
+        public async Task<IList<string>> GetRoleById(int id)
+        {
+            User user = await _eFUnitOfWork.UserManager.FindByIdAsync(Convert.ToString(id));
+            IList<string> userRoles = null;
+            if (user != null)
+                userRoles = await _eFUnitOfWork.UserManager.GetRolesAsync(user);
+            return userRoles;
         }
     }
 }
