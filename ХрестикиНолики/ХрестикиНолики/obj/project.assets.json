@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anton\\source\\repos\\ХрестикиНолики\\ХрестикиНолики\\ХрестикиНолики.csproj",
+      "projectUniqueName": "C:\\Users\\Anton\\Desktop\\shelter\\ХрестикиНолики\\ХрестикиНолики\\ХрестикиНолики.csproj",
       "projectName": "ХрестикиНолики",
-      "projectPath": "C:\\Users\\Anton\\source\\repos\\ХрестикиНолики\\ХрестикиНолики\\ХрестикиНолики.csproj",
+      "projectPath": "C:\\Users\\Anton\\Desktop\\shelter\\ХрестикиНолики\\ХрестикиНолики\\ХрестикиНолики.csproj",
       "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anton\\source\\repos\\ХрестикиНолики\\ХрестикиНолики\\obj\\",
+      "outputPath": "C:\\Users\\Anton\\Desktop\\shelter\\ХрестикиНолики\\ХрестикиНолики\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

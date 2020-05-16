@@ -354,17 +354,17 @@ namespace ХрестикиНолики
             Console.Clear();
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Управлять стрелками\n ставить хрестик на space\n В игре пока что нету ничьи XwX\n");
+            Console.WriteLine("Управлять стрелками\n ставить хрестик на space\n Игра на финальной стадии разработки");
             Console.ResetColor();
 
-            Console.WriteLine($"IsPlayerOnFigure : {isPlayerOnFigure}\n {aP.Curs}\n IsSteped : {aP.isSteped}\n isPlayerCreate : {IsPlayerCreate}\n temp : {temp}\n PlaceCount: {aP.PlaceCount}");
+            //Console.WriteLine($"IsPlayerOnFigure : {isPlayerOnFigure}\n {aP.Curs}\n IsSteped : {aP.isSteped}\n isPlayerCreate : {IsPlayerCreate}\n temp : {temp}\n PlaceCount: {aP.PlaceCount}");
 
             for (int x = 0; x < frame.Count; x++)
             {
                 Console.WriteLine(string.Join("  ", frame[x]));
             }
 
-            Console.WriteLine("\nXrestikiNoliki 0.0.4");
+            Console.WriteLine("\nXrestikiNoliki 0.0.5");
         }
     }
 }
