@@ -7,7 +7,10 @@ namespace ХрестикиНолики
     class Player
     {
         public string Curs { get; set; }
+
         public bool isSteped { get; set; }
+
+        public int PlaceCount { get; set; }
 
         public Player(string curs)
         {
@@ -42,6 +45,8 @@ namespace ХрестикиНолики
 
         static string temp = "";
 
+        static byte drawCount = 0;
+
         static string spike = "X";
 
         static string circle = "O";
@@ -74,6 +79,8 @@ namespace ХрестикиНолики
 
                 Render(pl1, pl2, ref AllPlayers);
 
+                CheckDraw(AllPlayers);
+
                 WhoWin(spike, ref gameStatus);
                 WhoWin(circle, ref gameStatus);
             }
@@ -98,6 +105,14 @@ namespace ХрестикиНолики
                     { frame[x][y] = pl.opposite(); }
                 }
             }
+        }
+
+        static void CheckDraw(Player p)
+        {
+            if (p.PlaceCount == 4)
+                drawCount++;
+            if (drawCount == 2)
+                gameStatus = false;
         }
 
         static void WhoWin(string f, ref bool gStatus)
@@ -153,6 +168,7 @@ namespace ХрестикиНолики
                 gStatus = false;
             if (counterlD == 3)
                 gStatus = false;
+
         }
 
         static void MovePlayer(ConsoleKeyInfo kI, Player sP)
@@ -311,11 +327,15 @@ namespace ХрестикиНолики
 
                         if(kI.Key == ConsoleKey.Spacebar) //Оставление хрестика.
                         {
-                            if(frame[x][y] != spike || frame[x][y] != circle)
+                            if(!isPlayerOnFigure)
                             {
                                 IsPlayerCreate = true;
-                                temp = sP.Figure();
                                 isPlayerOnFigure = true;
+
+                                temp = sP.Figure();
+
+                                sP.PlaceCount++;
+
                             }
 
                         }
@@ -337,7 +357,7 @@ namespace ХрестикиНолики
             Console.WriteLine("Управлять стрелками\n ставить хрестик на space\n В игре пока что нету ничьи XwX\n");
             Console.ResetColor();
 
-           // Console.WriteLine($"IsPlayerOnFigure : {isPlayerOnFigure}\n {aP.Curs}\n IsSteped : {aP.isSteped}\n isPlayerCreate : {IsPlayerCreate}\n temp : {temp}");
+            Console.WriteLine($"IsPlayerOnFigure : {isPlayerOnFigure}\n {aP.Curs}\n IsSteped : {aP.isSteped}\n isPlayerCreate : {IsPlayerCreate}\n temp : {temp}\n PlaceCount: {aP.PlaceCount}");
 
             for (int x = 0; x < frame.Count; x++)
             {
