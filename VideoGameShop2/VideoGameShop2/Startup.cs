@@ -15,6 +15,7 @@ using AutoMapper;
 using DAL.Entities;
 using BLL.DTO;
 using DAL.Seeding;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace VideoGameShop2
 {
@@ -82,6 +83,8 @@ namespace VideoGameShop2
 
             services.AddControllersWithViews();//
             services.AddMvc();//
+
+            services.AddAuthentication(JwtBearerDefaults)
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

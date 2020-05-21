@@ -4,7 +4,13 @@ using BLL.Interfaces.IEFServices;
 using DAL.Entities;
 using DAL.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace BLL.Services.EF_Services
@@ -13,16 +19,18 @@ namespace BLL.Services.EF_Services
     {
         private readonly IEFUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IConfiguration _configuration;
 
-        public EFUserService(IEFUnitOfWork unitOfWork, IMapper mapper)
+        public EFUserService(IEFUnitOfWork unitOfWork, IMapper mapper, IConfiguration configuration)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _configuration = configuration;
         }
 
         public async Task<string> Register(UserRegisterDTO user)
         {
-            if(user.Password != user.ConfirmPassword)
+            if(user.ConfirmPassword != user.ConfirmPassword)
             { return "Пароли не совпадают!"; }
 
             User _user = new User { Email = user.Email, UserName = user.UserName };
@@ -52,7 +60,10 @@ namespace BLL.Services.EF_Services
                 var result = await _unitOfWork.SignInManager.PasswordSignInAsync(user.UserName, user.Password, user.RememberMe, false);
 
                 if (result.Succeeded)
-                { return "Успешный вход!"; }
+                {
+                    var tok = await BuildToken(_user);
+                    return "Успешный вход!";
+                }
 
                 else
                 { return "Неверный пароль!"; }
@@ -155,6 +166,37 @@ namespace BLL.Services.EF_Services
                 }
             }
             return "Данного пользователя не существует!";
+        }
+
+        public async Task<string> BuildToken(User user)
+        {
+            var roles = await _unitOfWork.SignInManager.UserManager.GetRolesAsync(user);
+            var claims = new List<Claim>();
+
+            claims.Add(new Claim(ClaimTypes.Name, user.UserName));
+            claims.Add(new Claim("accountId", user.Id.ToString()));
+            claims.Add(new Claim("email", user.Email));
+
+            foreach(var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSecurityKey"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expiration = DateTime.UtcNow.AddDays(double.Parse(_configuration["JwtExpiryInDays"]));
+
+            JwtSecurityToken token = new JwtSecurityToken
+                (
+                issuer: _configuration["JwtIssuer"],
+                audience: _configuration["JwtAudience"],
+                claims: claims,
+                notBefore: DateTime.UtcNow,
+                expires: expiration,
+                signingCredentials: creds
+                );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }

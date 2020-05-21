@@ -1,4 +1,5 @@
 ﻿using BLL.DTO;
+using DAL.Entities;
 using System.Threading.Tasks;
 
 namespace BLL.Interfaces.IEFServices
@@ -18,5 +19,7 @@ namespace BLL.Interfaces.IEFServices
         Task<string> Delete(int id);
 
         Task<string> ChangePassword(UserChangePasswordDTO user);
+
+        Task<string> BuildToken(User user);
     }
 }

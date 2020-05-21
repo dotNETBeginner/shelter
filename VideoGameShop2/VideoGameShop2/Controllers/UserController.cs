@@ -17,25 +17,14 @@ namespace VideoGameShop2.Controllers
         [Route("Register")]
         public async Task<IActionResult> Register([FromBody]UserRegisterDTO user)
         {
-            try
-            {
-                await efUserService.Register(user);
-                return StatusCode(201);
-            }
-            catch
-            { return StatusCode(404); }
+            return Ok(await efUserService.Register(user));
         }
 
         [HttpGet]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDTO user)
         {
-            try
-            {
                 return Ok(await efUserService.Login(user));
-            }
-            catch
-            { return StatusCode(404); }
         }
 
         [HttpGet]
