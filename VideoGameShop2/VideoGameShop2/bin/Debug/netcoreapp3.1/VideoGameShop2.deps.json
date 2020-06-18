@@ -28,6 +28,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
           "BLL": "1.0.0",
           "DAL": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.3",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.2",
@@ -336,6 +337,50 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "FluentValidation/8.6.2": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.6.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation.AspNetCore/8.6.2": {
+        "dependencies": {
+          "FluentValidation": "8.6.2",
+          "FluentValidation.DependencyInjectionExtensions": "8.6.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.6.2.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll": {}
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/8.6.2": {
+        "dependencies": {
+          "FluentValidation": "8.6.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.6.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {}
+        }
+      },
       "Microsoft.AspNet.Identity.Core/2.2.3": {
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
@@ -375,6 +420,20 @@
           "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http": "2.2.0",
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0"
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.4": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "3.1.4.0",
+            "fileVersion": "3.100.420.21604"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.3": {
@@ -1143,6 +1202,37 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Protocols/5.5.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "6.5.1",
+          "Microsoft.IdentityModel.Tokens": "6.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {
+            "assemblyVersion": "5.5.0.0",
+            "fileVersion": "5.5.0.60624"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/5.5.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols": "5.5.0",
+          "Newtonsoft.Json": "11.0.2",
+          "System.IdentityModel.Tokens.Jwt": "6.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
+            "assemblyVersion": "5.5.0.0",
+            "fileVersion": "5.5.0.60624"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
         }
       },
       "Microsoft.IdentityModel.Tokens/6.5.1": {
@@ -2413,6 +2503,7 @@
         "dependencies": {
           "AutoMapper": "9.0.0",
           "DAL": "1.0.0",
+          "FluentValidation.AspNetCore": "8.6.2",
           "System.IdentityModel.Tokens.Jwt": "6.5.1"
         },
         "runtime": {
@@ -4063,6 +4154,27 @@
       "path": "automapper.extensions.microsoft.dependencyinjection/7.0.0",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512"
     },
+    "FluentValidation/8.6.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-N2vz+f6pAX9AI19hu83U2LJjjc/ETzWGlICVanu3DIG76QhzEu3PR/CQSFBX69PRuBTivrW4jhBzeV7dXIfqyw==",
+      "path": "fluentvalidation/8.6.2",
+      "hashPath": "fluentvalidation.8.6.2.nupkg.sha512"
+    },
+    "FluentValidation.AspNetCore/8.6.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-55s9XfDEtykWAd3KjWiB9xM6FsYQW4K0gTWY4Sl4f65vEdb2nlS3uijtKIpRuayLYMC5/Bvd9QUhOsSGZ11Pwg==",
+      "path": "fluentvalidation.aspnetcore/8.6.2",
+      "hashPath": "fluentvalidation.aspnetcore.8.6.2.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/8.6.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A3Hw0xjB/j6b/UiC8RgLsp5TkApZOsLzh5LAmfZkbQpWBrAqo8B4eOm+uyYhN3crSg0E6kgse8k6EdZpRoj+sQ==",
+      "path": "fluentvalidation.dependencyinjectionextensions/8.6.2",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512"
+    },
     "Microsoft.AspNet.Identity.Core/2.2.3": {
       "type": "package",
       "serviceable": true,
@@ -4097,6 +4209,13 @@
       "sha512": "sha512-XlVJzJ5wPOYW+Y0J6Q/LVTEyfS4ssLXmt60T0SPP+D8abVhBTl+cgw2gDHlyKYIkcJg7btMVh383NDkMVqD/fg==",
       "path": "microsoft.aspnetcore.authentication.core/2.2.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8mVR4JzGoiJzrDr9/nEkrGP46nVZNGHMF2jCY4zhZctOyzT9Y7ugtrsnDGtrFShi8k83O6cpykAEWKcypYnDTA==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.4",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.3.1.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.3": {
       "type": "package",
@@ -4475,6 +4594,20 @@
       "sha512": "sha512-iujlW4mgBKaib0gB3wbJLCCRhaNmxt504O5aGMdIH0JLIjCw+LbX+q3SFf3u0C29rYErvQQ9xeAtGywjvSGLxg==",
       "path": "microsoft.identitymodel.logging/6.5.1",
       "hashPath": "microsoft.identitymodel.logging.6.5.1.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols/5.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m1gwAQwZjUxzRBC+4H40vYSo9Cms9yUbMdW492rQoXHU77G/ItiKxpk2+W9bWYcdsKUDKudye7im3T3MlVxEkg==",
+      "path": "microsoft.identitymodel.protocols/5.5.0",
+      "hashPath": "microsoft.identitymodel.protocols.5.5.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect/5.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-21F4QlbaD5CXNs2urNRCO6vljbbrhv3gmGT8P18SKGKZ9IYBCn29extoJriHiPfhABd5b8S7RcdKU50XhERkYg==",
+      "path": "microsoft.identitymodel.protocols.openidconnect/5.5.0",
+      "hashPath": "microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Tokens/6.5.1": {
       "type": "package",

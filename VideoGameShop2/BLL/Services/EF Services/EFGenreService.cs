@@ -5,6 +5,8 @@ using DAL.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using BLL.Validators;
+using FluentValidation.Results;
 
 namespace BLL.Services.EF_Services
 {
@@ -37,10 +39,27 @@ namespace BLL.Services.EF_Services
             return res;
         }
 
-        public async Task AddGenre(GenreDTO genre)
+        public async Task<string> AddGenre(GenreDTO genre)
         {
-            var x = _mapper.Map<GenreDTO, Genre>(genre);
-            await _efUnitOfWork.EFGenreRepository.Add(x);
+            GenreValidator genreValidator = new GenreValidator();
+
+            ValidationResult result = genreValidator.Validate(genre);
+
+            if (result.IsValid)
+            {
+                var x = _mapper.Map<GenreDTO, Genre>(genre);
+                await _efUnitOfWork.EFGenreRepository.Add(x);
+                return "Жанр был успешно добавлен!";
+            }
+            else
+            {
+                string error = "";
+                foreach (var failure in result.Errors)
+                {
+                    error = "Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage;
+                }
+                return error;
+            }
         }
 
         public async Task DeleteGenre(int Id)

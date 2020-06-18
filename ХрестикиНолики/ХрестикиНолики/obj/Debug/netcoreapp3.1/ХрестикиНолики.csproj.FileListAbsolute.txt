@@ -9,3 +9,14 @@ C:\Users\Anton\source\repos\ХрестикиНолики\ХрестикиНол�
 C:\Users\Anton\source\repos\ХрестикиНолики\ХрестикиНолики\obj\Debug\netcoreapp3.1\ХрестикиНолики.AssemblyInfo.cs
 C:\Users\Anton\source\repos\ХрестикиНолики\ХрестикиНолики\obj\Debug\netcoreapp3.1\ХрестикиНолики.dll
 C:\Users\Anton\source\repos\ХрестикиНолики\ХрестикиНолики\obj\Debug\netcoreapp3.1\ХрестикиНолики.pdb
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\bin\Debug\netcoreapp3.1\ХрестикиНолики.exe
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\bin\Debug\netcoreapp3.1\ХрестикиНолики.deps.json
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\bin\Debug\netcoreapp3.1\ХрестикиНолики.runtimeconfig.json
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\bin\Debug\netcoreapp3.1\ХрестикиНолики.runtimeconfig.dev.json
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\bin\Debug\netcoreapp3.1\ХрестикиНолики.dll
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\bin\Debug\netcoreapp3.1\ХрестикиНолики.pdb
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\obj\Debug\netcoreapp3.1\ХрестикиНолики.csprojAssemblyReference.cache
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\obj\Debug\netcoreapp3.1\ХрестикиНолики.AssemblyInfoInputs.cache
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\obj\Debug\netcoreapp3.1\ХрестикиНолики.AssemblyInfo.cs
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\obj\Debug\netcoreapp3.1\ХрестикиНолики.dll
+C:\Users\Anton\Desktop\shelter\ХрестикиНолики\ХрестикиНолики\obj\Debug\netcoreapp3.1\ХрестикиНолики.pdb

@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using BLL.DTO;
 using BLL.Interfaces.IEFServices;
+using BLL.Validators;
 using DAL.Entities;
 using DAL.Interfaces;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -20,10 +22,27 @@ namespace BLL.Services.EF_Services
             _mapper = mapper;
         }
 
-        public async Task CreateRole(RoleDTO role)
+        public async Task<string> CreateRole(RoleDTO role)
         {
-            var _role = _mapper.Map<RoleDTO, MyRole>(role);
-            await _eFUnitOfWork.RoleManager.CreateAsync(_role);
+            RoleValidator genreValidator = new RoleValidator();
+
+            ValidationResult result = genreValidator.Validate(role);
+
+            if (result.IsValid)
+            {
+                var _role = _mapper.Map<RoleDTO, MyRole>(role);
+                await _eFUnitOfWork.RoleManager.CreateAsync(_role);
+                return "Роль была успешно добавлена";
+            }
+            else
+            {
+                string error = "";
+                foreach (var failure in result.Errors)
+                {
+                    error = "Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage;
+                }
+                return error;
+            }
         }
 
         public async Task AppointRole(int userId, string role)

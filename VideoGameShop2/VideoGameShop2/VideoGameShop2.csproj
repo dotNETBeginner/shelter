@@ -9,11 +9,14 @@
     <Compile Remove="Migrations\20200415111027_NewIdentity.Designer.cs" />
     <Compile Remove="Migrations\20200415112414_NewIdt.cs" />
     <Compile Remove="Migrations\20200415112414_NewIdt.Designer.cs" />
+    <Compile Remove="Migrations\20200530125008_fluentValidation2.cs" />
+    <Compile Remove="Migrations\20200530125008_fluentValidation2.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
       <PrivateAssets>all</PrivateAssets>

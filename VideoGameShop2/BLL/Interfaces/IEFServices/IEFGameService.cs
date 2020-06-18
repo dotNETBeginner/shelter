@@ -1,4 +1,6 @@
 ﻿using BLL.DTO;
+using DAL.Paging;
+using DAL.Parameters;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,7 +8,7 @@ namespace BLL.Interfaces.IEFServices
 {
     public interface IEFGameService
     {
-        Task AddGame(GameDTO game);
+        Task<string> AddGame(GameDTO game);
 
         Task UpdateGame(GameDTO game);
 
@@ -16,9 +18,8 @@ namespace BLL.Interfaces.IEFServices
 
         Task<IEnumerable<GameDTO>> GetAllGames();
 
-        Task<GameDTO> GetGameByName(string name);
-
         Task<GameDTO> GetCheapestGame();
 
+        Task<PagedList<GameDTO>> GetGamesPartly(GameParameters gameParameters);
     }
 }

@@ -6,7 +6,7 @@ namespace BLL.Interfaces.IEFServices
 {
     public interface IEFPublisherService
     {
-        Task AddPublisher(PublisherDTO publisher);
+        Task<string> AddPublisher(PublisherDTO publisher);
 
         Task UpdatePublisher(PublisherDTO publisher);
 

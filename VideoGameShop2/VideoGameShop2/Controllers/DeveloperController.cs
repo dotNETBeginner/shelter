@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using BLL.DTO;
 using BLL.Interfaces.IEFServices;
+using DAL.Parameters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace VideoGameShop2.Controllers
@@ -13,14 +14,16 @@ namespace VideoGameShop2.Controllers
         public DeveloperController(IEFDeveloperService efDeveloperService)
         { _efDeveloperService = efDeveloperService; }
 
+
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] DeveloperParameters developerParameters)
         {
-            try { return Ok(await _efDeveloperService.GetAllDevelopers()); }
+            var developers = await _efDeveloperService.GetDevelopersPartly(developerParameters);
+            try { return Ok(developers); }
             catch { return StatusCode(404); }
         }
 
-       [HttpGet("id/{id}")]
+        [HttpGet("id/{id}")]
        public async Task<IActionResult> Get(int Id)
         {
             try { return Ok(await _efDeveloperService.GetDeveloperById(Id)); }
@@ -56,8 +59,7 @@ namespace VideoGameShop2.Controllers
         {
             try
             {
-                await _efDeveloperService.AddDeveloper(val);
-                return StatusCode(201);
+                return Ok(await _efDeveloperService.AddDeveloper(val));
             }
             catch
             { return StatusCode(404); }

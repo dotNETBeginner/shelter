@@ -56,8 +56,7 @@ namespace VideoGameShop2.Controllers
         {
             try
             {
-                await _efPublisherService.AddPublisher(val);
-                return StatusCode(201);
+                return Ok(await _efPublisherService.AddPublisher(val));
             }
             catch
             { return StatusCode(404); }

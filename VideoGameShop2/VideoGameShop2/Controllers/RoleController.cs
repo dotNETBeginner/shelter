@@ -20,8 +20,7 @@ namespace VideoGameShop2.Controllers
         {
             try
             {
-                await eFRoleService.CreateRole(role);
-                return StatusCode(204);
+                return Ok(await eFRoleService.CreateRole(role));
             }
             catch
             {

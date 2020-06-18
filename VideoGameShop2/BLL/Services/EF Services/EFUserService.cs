@@ -33,7 +33,7 @@ namespace BLL.Services.EF_Services
             if(user.ConfirmPassword != user.ConfirmPassword)
             { return "Пароли не совпадают!"; }
 
-            User _user = new User { Email = user.Email, UserName = user.UserName };
+            User _user = new User { Email = user.Email, UserName = user.UserName, Money = 0 };
 
             var result = await _unitOfWork.UserManager.CreateAsync(_user, user.Password);
 

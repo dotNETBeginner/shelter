@@ -6,7 +6,7 @@ namespace BLL.Interfaces.IEFServices
 {
     public interface IEFGenreService
     {
-        Task AddGenre(GenreDTO genre);
+        Task<string> AddGenre(GenreDTO genre);
 
         Task UpdateGenre(GenreDTO genre);
 

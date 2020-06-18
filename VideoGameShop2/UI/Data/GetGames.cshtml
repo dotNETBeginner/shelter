@@ -1,0 +1,79 @@
+﻿@using System.Net.Http;
+@using BLL.DTO;
+@using BLL.Services.EF_Services;
+@using BLL.Interfaces.IEFServices;
+@using System.Text.Json;
+@using System.Net.Http.Formatting;
+@using Newtonsoft.Json;
+@using BLL.Validators;
+@using Microsoft.AspNetCore.Components;
+@inject IEFGameService gameService;
+
+<h1>Games</h1>
+
+<hr/>
+
+<style>
+    table{
+        width: 40%;
+        background: brown;
+        color: white;
+        border-spacing: 2px;
+    }
+
+    td, th{
+        background: orange;
+        padding: 6px;
+    }
+</style>
+
+@if (gameList.Any())
+{
+<table>
+    <tr> <th>ID</th>
+    <th>Name</th>
+    <th>Cost</th>
+    <th>Id of Developer</th>
+    <th>Id of Genre </th>
+    </tr>
+</table>
+
+<br/>
+}
+else
+{
+    <p>No Contacts Found</p>
+}
+
+<div class="m-body">
+    <EditForm Model="@gameDTO" OnValidSubmit="@HandleValidSubmit">
+
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <form>
+
+            <label>Group Of Detail Id</label>
+            <InputNumber class="form-control" @bind-Value="@gameDTO.GroupOfDetailId" /> <br><br>
+
+            <label>Name Of Detail</label>
+            <InputText class="form-control" @bind-Value="@gameDTO.NameOfDetail" /> <br><br>
+
+            <label>Article Of Detail</label>
+            <InputText class="form-control" @bind-Value="@gameDTO.ArticleOfDetail" /> <br><br>
+
+            <label>Data Of Detail</label>
+            <InputDate class="form-control" @bind-Value="@gameDTO.DataOfDetail" /><br>
+
+        </form>
+
+
+        <button type="submit" class="btn btn-primary" onClick="window.location.href=window.location.href">Submit</button>
+    </EditForm>
+</div>
+
+@code {
+ @functions{
+     
+ }
+}

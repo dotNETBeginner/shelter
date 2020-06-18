@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
 using AutoMapper;
+using DAL.Paging;
+using DAL.Parameters;
 
 namespace DAL.Repositories.EFRepositories
 {
@@ -16,11 +18,12 @@ namespace DAL.Repositories.EFRepositories
             : base(dbcontext)
         { }
 
-        public async Task<Game> GetGameByName(string name)
+        private void  GetGameByName(ref IQueryable<Game> games, string gameName)
         {
-            var x = await _dbcontext.Set<Game>().ToListAsync();
+            if (!games.Any() || string.IsNullOrWhiteSpace(gameName))
+                return;
 
-            return x.Where(x => x.Name == name).FirstOrDefault();
+            games = games.Where(g => g.Name.ToLower().Contains(gameName.Trim().ToLower()));
         }
 
         public async Task<Game>  GetCheapestGame()
@@ -30,6 +33,18 @@ namespace DAL.Repositories.EFRepositories
             double min = x.Min(a => a.Cost);
 
             return x.Where(x => x.Cost == min).FirstOrDefault();
+        }
+
+        public async Task<PagedList<Game>> GetGamesPartly(GameParameters gameParameters)
+        {
+            var games = FindByCondition(g => g.Cost >= gameParameters.MinCost &&
+                                        g.Cost <= gameParameters.MaxCost);
+
+            GetGameByName(ref games, gameParameters.Name);
+
+            return await PagedList<Game>.ToPagedList(games,
+                gameParameters.PageNumber,
+                gameParameters.PageSize);
         }
 
     }

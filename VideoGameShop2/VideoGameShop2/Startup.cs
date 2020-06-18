@@ -16,6 +16,13 @@ using DAL.Entities;
 using BLL.DTO;
 using DAL.Seeding;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System;
+using BLL.Validators;
+using FluentValidation;
+using Microsoft.AspNetCore.Mvc.Razor;
+using FluentValidation.AspNetCore;
 
 namespace VideoGameShop2
 {
@@ -62,7 +69,6 @@ namespace VideoGameShop2
                 .ReverseMap();
             }, typeof(Startup));
 
-
             services.AddTransient<IEFDeveloperRepository, EFDeveloperRepository>();
             services.AddTransient<IEFGameRepository, EFGameRepository>();
             services.AddTransient<IEFGenreRepository, EFGenreRepository>();
@@ -81,10 +87,42 @@ namespace VideoGameShop2
 
             services.AddTransient<RoleInitializer>();
 
-            services.AddControllersWithViews();//
-            services.AddMvc();//
+            services.AddValidatorsFromAssemblyContaining<DeveloperValidator>();
+            services.AddValidatorsFromAssemblyContaining<GameValidator>();
+            services.AddValidatorsFromAssemblyContaining<GenreValidator>();
+            services.AddValidatorsFromAssemblyContaining<PublisherValidator>();
+            services.AddValidatorsFromAssemblyContaining<RoleValidator>();
 
-            services.AddAuthentication(JwtBearerDefaults)
+            services.AddServerSideBlazor();
+            services.AddControllersWithViews();//
+            services.AddMvc(setup => {
+                
+            }).AddFluentValidation();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+
+                        ValidIssuer = Configuration["JwtIssuer"],
+
+                        ValidateAudience = true,
+
+                        ValidAudience = Configuration["JwtAudience"],
+
+                        ValidateLifetime = true,
+
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSecurityKey"])),
+
+                        ValidateIssuerSigningKey = true,
+                        ClockSkew = TimeSpan.Zero
+                    };
+                }
+                );
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -110,6 +148,11 @@ namespace VideoGameShop2
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
+
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapBlazorHub();
+                endpoints.MapRazorPages();
+
             });
         }
     }

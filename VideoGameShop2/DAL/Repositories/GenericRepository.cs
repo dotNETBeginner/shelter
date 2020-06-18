@@ -2,7 +2,10 @@
 using DAL.Interfaces;
 using DAL.Interfaces.EntityInterfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace DAL.Repositories
@@ -37,5 +40,11 @@ namespace DAL.Repositories
             _dbcontext.Remove(_dbcontext.Set<TEntity>().Find(Id));
             await _dbcontext.SaveChangesAsync();
         }
+
+        public IQueryable<TEntity> FindAll()
+        { return _dbcontext.Set<TEntity>(); }
+
+        public IQueryable<TEntity> FindByCondition(Expression<Func<TEntity, bool>> expression)
+        { return _dbcontext.Set<TEntity>().Where(expression); }
     }
 }

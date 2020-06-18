@@ -5,6 +5,11 @@ using DAL.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using BLL.Validators;
+using FluentValidation.Results;
+using System;
+using DAL.Parameters;
+using DAL.Paging;
 
 namespace BLL.Services.EF_Services
 {
@@ -37,10 +42,27 @@ namespace BLL.Services.EF_Services
             return res;
         }
 
-        public async Task AddDeveloper(DeveloperDTO developer)
+        public async Task<string> AddDeveloper(DeveloperDTO developer)
         {
-            var x = _mapper.Map<DeveloperDTO,Developer>(developer);
-            await _efUnitOfWork.EFDeveloperRepository.Add(x);
+            DeveloperValidator devValidator = new DeveloperValidator();
+
+            ValidationResult result = devValidator.Validate(developer);
+
+            if(result.IsValid)
+            {
+                var x = _mapper.Map<DeveloperDTO, Developer>(developer);
+                await _efUnitOfWork.EFDeveloperRepository.Add(x);
+                return "Разработчик был успешно добавлен!";
+            }
+            else
+            {
+                string error = "";
+                foreach (var failure in result.Errors)
+                {
+                    error = "Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage;
+                }
+                return error;
+            }
         }
 
         public async Task DeleteDeveloper(int Id)
@@ -56,6 +78,14 @@ namespace BLL.Services.EF_Services
         {
             var x = await _efUnitOfWork.EFDeveloperRepository.GetDeveloperByName(name);
             DeveloperDTO res = _mapper.Map<Developer, DeveloperDTO>(x);
+
+            return res;
+        }
+
+        public async Task<PagedList<DeveloperDTO>> GetDevelopersPartly(DeveloperParameters developerParameters)
+        {
+            var x = await _efUnitOfWork.EFDeveloperRepository.GetDevelopersPartly(developerParameters);
+            var res = _mapper.Map<PagedList<DeveloperDTO>>(x);
 
             return res;
         }

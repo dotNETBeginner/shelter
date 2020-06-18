@@ -5,6 +5,8 @@ using DAL.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using BLL.Validators;
+using FluentValidation.Results;
 
 namespace BLL.Services.EF_Services
 {
@@ -37,10 +39,26 @@ namespace BLL.Services.EF_Services
             return res;
         }
 
-        public async Task AddPublisher(PublisherDTO publisher)
+        public async Task<string> AddPublisher(PublisherDTO publisher)
         {
-            var x = _mapper.Map<PublisherDTO, Publisher>(publisher);
-            await _efUnitOfWork.EFPublisherRepository.Add(x);
+            PublisherValidator genreValidator = new PublisherValidator();
+
+            ValidationResult result = genreValidator.Validate(publisher);
+            if (result.IsValid)
+            {
+                var x = _mapper.Map<PublisherDTO, Publisher>(publisher);
+                await _efUnitOfWork.EFPublisherRepository.Add(x);
+                return "Издатель был успешно создан";
+            }
+            else
+            {
+                string error = "";
+                foreach (var failure in result.Errors)
+                {
+                    error = "Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage;
+                }
+                return error;
+            }
         }
 
         public async Task DeletePublisher(int Id)

@@ -1,4 +1,6 @@
 ﻿using BLL.DTO;
+using DAL.Paging;
+using DAL.Parameters;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,7 +8,7 @@ namespace BLL.Interfaces.IEFServices
 {
     public interface IEFDeveloperService
     {
-        Task AddDeveloper(DeveloperDTO developer);
+        Task<string> AddDeveloper(DeveloperDTO developer);
 
         Task UpdateDeveloper(DeveloperDTO developer);
 
@@ -17,5 +19,7 @@ namespace BLL.Interfaces.IEFServices
         Task<IEnumerable<DeveloperDTO>> GetAllDevelopers();
 
         Task<DeveloperDTO> GetDeveloperByName(string name);
+
+        Task<PagedList<DeveloperDTO>> GetDevelopersPartly(DeveloperParameters developerParameters);
     }
 }

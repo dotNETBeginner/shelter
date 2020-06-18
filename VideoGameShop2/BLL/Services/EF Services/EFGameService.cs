@@ -5,6 +5,10 @@ using DAL.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using BLL.Validators;
+using FluentValidation.Results;
+using DAL.Paging;
+using DAL.Parameters;
 
 namespace BLL.Services.EF_Services
 {
@@ -37,10 +41,27 @@ namespace BLL.Services.EF_Services
             return res;
         }
 
-        public async Task AddGame(GameDTO game)
+        public async Task<string> AddGame(GameDTO game)
         {
-            var x = _mapper.Map<GameDTO, Game>(game);
-            await _efUnitOfWork.EFGameRepository.Add(x);
+            GameValidator gameValidator = new GameValidator();
+
+            ValidationResult result = gameValidator.Validate(game);
+
+            if (result.IsValid)
+            {
+                var x = _mapper.Map<GameDTO, Game>(game);
+                await _efUnitOfWork.EFGameRepository.Add(x);
+                return "Игра была добавлена";
+            }
+            else
+            {
+                string error = "";
+                foreach (var failure in result.Errors)
+                {
+                    error = "Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage;
+                }
+                return error;
+            }
         }
 
         public async Task DeleteGame(int Id)
@@ -52,18 +73,18 @@ namespace BLL.Services.EF_Services
             await _efUnitOfWork.EFGameRepository.Update(x);
         }
 
-        public async Task<GameDTO> GetGameByName(string name)
+        public async Task<GameDTO> GetCheapestGame()
         {
-            var x = await _efUnitOfWork.EFGameRepository.GetGameByName(name);
+            var x = await _efUnitOfWork.EFGameRepository.GetCheapestGame();
             GameDTO res = _mapper.Map<Game, GameDTO>(x);
 
             return res;
         }
 
-        public async Task<GameDTO> GetCheapestGame()
+        public async Task<PagedList<GameDTO>> GetGamesPartly(GameParameters gameParameters)
         {
-            var x = await _efUnitOfWork.EFGameRepository.GetCheapestGame();
-            GameDTO res = _mapper.Map<Game, GameDTO>(x);
+            var x = await _efUnitOfWork.EFGameRepository.GetGamesPartly(gameParameters);
+            var res = _mapper.Map<PagedList<GameDTO>>(x);
 
             return res;
         }

@@ -56,8 +56,7 @@ namespace VideoGameShop2.Controllers
         {
             try
             {
-                await _efGenreService.AddGenre(val);
-                return StatusCode(201);
+                return Ok(await _efGenreService.AddGenre(val));
             }
             catch
             { return StatusCode(404); }

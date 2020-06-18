@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using BLL.DTO;
 using BLL.Interfaces.IEFServices;
+using DAL.Parameters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace VideoGameShop2.Controllers
@@ -14,9 +15,13 @@ namespace VideoGameShop2.Controllers
         { _efGameService = efGameService; }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] GameParameters gameParameters)
         {
-            try { return Ok(await _efGameService.GetAllGames()); }
+            if (!gameParameters.ValidCostRange)
+            { return BadRequest("Max value of cost cannot be less than min value of birth"); }
+
+            var games = await _efGameService.GetGamesPartly(gameParameters);
+            try { return Ok(games); }
             catch { return StatusCode(404); }
         }
 
@@ -56,18 +61,10 @@ namespace VideoGameShop2.Controllers
         {
             try
             {
-                await _efGameService.AddGame(val);
-                return StatusCode(201);
+                return Ok(await _efGameService.AddGame(val));
             }
             catch
             { return StatusCode(404); }
-        }
-
-        [HttpGet("name/{name}")]
-        public async Task<IActionResult> Get(string name)
-        {
-            try { return Ok(await _efGameService.GetGameByName(name)); }
-            catch { return StatusCode(404); }
         }
 
         [HttpGet("cheap")]

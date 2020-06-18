@@ -28,9 +28,6 @@ namespace DAL.DbContexts
             modelBuilder.Entity<Developer>()
                 .HasKey(p => p.Id);
             modelBuilder.Entity<Developer>()
-                .Property(p => p.Name)
-                .HasMaxLength(50);
-            modelBuilder.Entity<Developer>()
                 .HasOne<Publisher>()
                 .WithMany()
                 .HasForeignKey(p => p.Id_Publisher);
@@ -38,9 +35,6 @@ namespace DAL.DbContexts
             //Game
             modelBuilder.Entity<Game>()
                 .HasKey(p => p.Id);
-            modelBuilder.Entity<Game>()
-                .Property(p => p.Name)
-                .HasMaxLength(50);
             modelBuilder.Entity<Game>()
                 .HasOne<Developer>()
                 .WithMany()
@@ -53,16 +47,10 @@ namespace DAL.DbContexts
             //Genre
             modelBuilder.Entity<Genre>()
                 .HasKey(p => p.Id);
-            modelBuilder.Entity<Publisher>()
-                .Property(p => p.Name)
-                .HasMaxLength(50);
 
             //Publisher
             modelBuilder.Entity<Publisher>()
                 .HasKey(p => p.Id);
-            modelBuilder.Entity<Publisher>()
-                .Property(p => p.Name)
-                .HasMaxLength(50);
 
             //UserBought
             modelBuilder.Entity<UserBought>()
@@ -75,12 +63,6 @@ namespace DAL.DbContexts
                 .HasOne<User>()
                 .WithMany()
                 .HasForeignKey(p => p.Id_User);
-
-            //User
-            
-
-            //AppUser
-          
 
         }
     }
