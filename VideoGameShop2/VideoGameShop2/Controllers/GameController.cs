@@ -14,7 +14,7 @@ namespace VideoGameShop2.Controllers
         public GameController(IEFGameService efGameService)
         { _efGameService = efGameService; }
 
-        [HttpGet]
+        [HttpGet("paged")]
         public async Task<IActionResult> Get([FromQuery] GameParameters gameParameters)
         {
             if (!gameParameters.ValidCostRange)
@@ -24,6 +24,15 @@ namespace VideoGameShop2.Controllers
             try { return Ok(games); }
             catch { return StatusCode(404); }
         }
+
+        [HttpGet]
+        public IActionResult GetView()
+        {
+            try { return View(); }
+            catch { return StatusCode(404); }
+        }
+
+
 
         [HttpGet("id/{id}")]
         public async Task<IActionResult> Get(int Id)

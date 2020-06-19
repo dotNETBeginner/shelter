@@ -9,76 +9,13 @@ namespace UI
     using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
-#nullable restore
-#line 1 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\_Imports.razor"
-using System.Net.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\_Imports.razor"
-using Microsoft.AspNetCore.Authorization;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\_Imports.razor"
-using Microsoft.AspNetCore.Components.Authorization;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\_Imports.razor"
-using Microsoft.AspNetCore.Components.Forms;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\_Imports.razor"
-using Microsoft.AspNetCore.Components.Routing;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 6 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\_Imports.razor"
-using Microsoft.AspNetCore.Components.Web;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 7 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\_Imports.razor"
-using Microsoft.JSInterop;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 8 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\_Imports.razor"
-using UI;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 9 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\_Imports.razor"
-using UI.Shared;
-
-#line default
-#line hidden
-#nullable disable
     public partial class App : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.Router>(0);
-            __builder.AddAttribute(1, "AppAssembly", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Reflection.Assembly>(
+            __builder.OpenElement(0, "Router");
+            __builder.AddAttribute(1, "AppAssembly", 
 #nullable restore
 #line 1 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\App.razor"
                       typeof(Program).Assembly
@@ -86,11 +23,13 @@ using UI.Shared;
 #line default
 #line hidden
 #nullable disable
-            ));
-            __builder.AddAttribute(2, "Found", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.RouteData>)((routeData) => (__builder2) => {
-                __builder2.AddMarkupContent(3, "\r\n        ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.RouteView>(4);
-                __builder2.AddAttribute(5, "RouteData", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.RouteData>(
+            );
+            __builder.AddMarkupContent(2, "\r\n    ");
+            __builder.OpenElement(3, "Found");
+            __builder.AddAttribute(4, "Context", "routeData");
+            __builder.AddMarkupContent(5, "\r\n        ");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.RouteView>(6);
+            __builder.AddAttribute(7, "RouteData", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.RouteData>(
 #nullable restore
 #line 3 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\App.razor"
                                routeData
@@ -98,8 +37,8 @@ using UI.Shared;
 #line default
 #line hidden
 #nullable disable
-                ));
-                __builder2.AddAttribute(6, "DefaultLayout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
+            ));
+            __builder.AddAttribute(8, "DefaultLayout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
 #nullable restore
 #line 3 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\App.razor"
                                                           typeof(MainLayout)
@@ -107,15 +46,15 @@ using UI.Shared;
 #line default
 #line hidden
 #nullable disable
-                ));
-                __builder2.CloseComponent();
-                __builder2.AddMarkupContent(7, "\r\n    ");
-            }
             ));
-            __builder.AddAttribute(8, "NotFound", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(9, "\r\n        ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.LayoutView>(10);
-                __builder2.AddAttribute(11, "Layout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
+            __builder.CloseComponent();
+            __builder.AddMarkupContent(9, "\r\n    ");
+            __builder.CloseElement();
+            __builder.AddMarkupContent(10, "\r\n    ");
+            __builder.OpenElement(11, "NotFound");
+            __builder.AddMarkupContent(12, "\r\n        ");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.LayoutView>(13);
+            __builder.AddAttribute(14, "Layout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
 #nullable restore
 #line 6 "C:\Users\Anton\Desktop\shelter\VideoGameShop2\UI\App.razor"
                              typeof(MainLayout)
@@ -123,17 +62,17 @@ using UI.Shared;
 #line default
 #line hidden
 #nullable disable
-                ));
-                __builder2.AddAttribute(12, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder3) => {
-                    __builder3.AddMarkupContent(13, "\r\n            ");
-                    __builder3.AddMarkupContent(14, "<p>Sorry, there\'s nothing at this address.</p>\r\n        ");
-                }
-                ));
-                __builder2.CloseComponent();
-                __builder2.AddMarkupContent(15, "\r\n    ");
+            ));
+            __builder.AddAttribute(15, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(16, "\r\n            ");
+                __builder2.AddMarkupContent(17, "<p>Sorry, there\'s nothing at this address.</p>\r\n        ");
             }
             ));
             __builder.CloseComponent();
+            __builder.AddMarkupContent(18, "\r\n    ");
+            __builder.CloseElement();
+            __builder.AddMarkupContent(19, "\r\n");
+            __builder.CloseElement();
         }
         #pragma warning restore 1998
     }

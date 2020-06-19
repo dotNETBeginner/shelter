@@ -258,8 +258,6 @@ C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreap
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\VideoGameShop2.Views.dll
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
@@ -267,8 +265,12 @@ C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreap
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Blazor.HttpClient.dll
+C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.genruntimeconfig.cache
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\VideoGameShop2\obj\Debug\netcoreapp3.1\VideoGameShop2.MvcApplicationPartsAssemblyInfo.cs

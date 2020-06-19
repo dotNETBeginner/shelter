@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.Services.EF_Services;
@@ -10,10 +11,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using UI.Data;
-using Microsoft.AspNetCore.Localization;
-using System.Net.Http;
 
 namespace UI
 {
@@ -32,7 +30,21 @@ namespace UI
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+
+            services.AddAuthorizationCore();
+
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+            var supportedCultures = new List<CultureInfo> { new CultureInfo("en"), new CultureInfo("ru") };
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en");
+                options.SupportedUICultures = supportedCultures;
+            });
+
+            services.AddHttpClient<EFGameService>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:5001");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,8 +66,12 @@ namespace UI
 
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseAuthentication();
+            app.UseRequestLocalization();
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });

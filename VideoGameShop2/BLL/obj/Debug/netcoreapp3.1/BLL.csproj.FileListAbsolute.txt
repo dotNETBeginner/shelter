@@ -20,3 +20,4 @@ C:\Users\Anton\Desktop\shelter\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.As
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.dll
 C:\Users\Anton\Desktop\shelter\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
+C:\Users\Anton\Desktop\shelter\VideoGameShop2\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache

@@ -28,15 +28,38 @@ namespace DAL.DbContexts
             modelBuilder.Entity<Developer>()
                 .HasKey(p => p.Id);
             modelBuilder.Entity<Developer>()
+                .Property(d => d.Name)
+                .HasMaxLength(45).IsRequired();
+            modelBuilder.Entity<Developer>()
+                .Property(d => d.Id_Publisher)
+                .IsRequired();
+            modelBuilder.Entity<Developer>()
                 .HasOne<Publisher>()
                 .WithMany()
                 .HasForeignKey(p => p.Id_Publisher);
+
+            //User
+            modelBuilder.Entity<User>()
+               .Property(u => u.Money)
+               .IsRequired();
 
             //Game
             modelBuilder.Entity<Game>()
                 .HasKey(p => p.Id);
             modelBuilder.Entity<Game>()
-                .HasOne<Developer>()
+                .Property(g => g.Name)
+                .HasMaxLength(45).IsRequired();
+            modelBuilder.Entity<Game>()
+                .Property(g => g.Id_Dev)
+                .IsRequired();
+            modelBuilder.Entity<Game>()
+                .Property(g => g.Id_Genre)
+                .IsRequired();
+            modelBuilder.Entity<Game>()
+                .Property(g => g.Cost)
+                .IsRequired();
+            modelBuilder.Entity<Game>()
+               .HasOne<Developer>()
                 .WithMany()
                 .HasForeignKey(p => p.Id_Dev);
             modelBuilder.Entity<Game>()
@@ -46,15 +69,27 @@ namespace DAL.DbContexts
 
             //Genre
             modelBuilder.Entity<Genre>()
-                .HasKey(p => p.Id);
+                .HasKey(g => g.Id);
+            modelBuilder.Entity<Genre>()
+                .Property(g => g.Name)
+                .HasMaxLength(45).IsRequired();
 
             //Publisher
             modelBuilder.Entity<Publisher>()
                 .HasKey(p => p.Id);
+            modelBuilder.Entity<Publisher>()
+                .Property(p => p.Name)
+                .HasMaxLength(45).IsRequired();
 
             //UserBought
             modelBuilder.Entity<UserBought>()
                 .HasKey(p => p.Id);
+            modelBuilder.Entity<UserBought>()
+                .Property(u => u.Id_Game)
+                .IsRequired();
+            modelBuilder.Entity<UserBought>()
+                .Property(u => u.Id_User)
+                .IsRequired();
             modelBuilder.Entity<UserBought>()
                 .HasOne<Game>()
                 .WithMany()

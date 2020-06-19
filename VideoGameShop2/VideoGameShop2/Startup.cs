@@ -43,6 +43,16 @@ namespace VideoGameShop2
                 cfg.UseSqlServer(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("VideoGameShop2"));
             });
 
+            services.Configure<RazorViewEngineOptions>(o =>
+            {
+                // {2} is area, {1} is controller,{0} is the action
+                o.ViewLocationFormats.Clear();
+                o.ViewLocationFormats.Add("UI/Pages/{0}" + RazorViewEngine.ViewExtension);
+            });
+
+            services.AddServerSideBlazor();
+            services.AddControllersWithViews();
+
             services.AddIdentity<User, MyRole>(opts =>
             {
                 opts.Password.RequiredLength = 5;
@@ -50,7 +60,7 @@ namespace VideoGameShop2
                 opts.Password.RequireUppercase = false;
             }
             )
-                .AddEntityFrameworkStores<MyDbContext>();
+             .AddEntityFrameworkStores<MyDbContext>();
 
             services.AddAutoMapper(cfg =>
             {
@@ -93,8 +103,6 @@ namespace VideoGameShop2
             services.AddValidatorsFromAssemblyContaining<PublisherValidator>();
             services.AddValidatorsFromAssemblyContaining<RoleValidator>();
 
-            services.AddServerSideBlazor();
-            services.AddControllersWithViews();//
             services.AddMvc(setup => {
                 
             }).AddFluentValidation();
